@@ -1,0 +1,5 @@
+# Week 2
+
+This week we learned how to use Xaringan to make presentations, and to host them with Github Pages.
+
+Click here to see [my presentation](https://mindalyn22.github.io/sensor-presentation)

@@ -1,0 +1,37 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "My Learning Diary",
+    "section": "",
+    "text": "This is a Quarto book.\nTo learn more about Quarto books visit https://quarto.org/docs/books.\n\n1 + 1\n\n[1] 2\n\n\n\n\n\n\n\n\nhellooo\n\n\n\nthis is the main page (index.qmd)\n\n\n[]\nnew qmd files can be used as new chapters, which must specify in _quarto.yml\nrender to get html files -> docs folder\ngithub pages\nreferences"
+  },
+  {
+    "objectID": "week_1.html",
+    "href": "week_1.html",
+    "title": "1  Week 1",
+    "section": "",
+    "text": "Active vs Passive\n\n\n\n\ndifferent types of resolutions\n\n\nspatial\n\n\nsize of raster cell (ex: 10m. RBG are all 10m bands)\n\n\nspectral\n\n\nelectromagnetic spectrum\n\n\n\nradiometric\n\n\nbits\ngranularity of energy\n\n\ntemporal\n\n\ntime of sensor revisiting\n\n*Can downscale or upscale bands to convert them to diff spatial resolution so we can use more of the spectral data. downscaling is intensive but upscaling (aka resampling) can be done with knn or majority rule.\nbands - [insert bands image]\nColor Composites (1) True Colour Composite (B1=Blue, B2=Green, B3=Red) [insert image] (2) False Color Composite (B8, B4, B3) - Plants reflect near-infrared and green light whilst absorbing red. (3) Atmospheric Penetration Composite - B12, B11, B8A with no visible bands to penetrate atmospheric particles. Vegetation = blue, urban area = white, gray cyan or purple. (4) Short-wave Infrared Composite (B12, B8A and B4) - shows vegetation in green, the darker the greener the denser it is and brown shows built up or bare soil …and there are more\n###Sentinal Data\nSpectral Feature Space - Wizard/Tasseled Cap - x axis (brightness): B4 (red) - vegetation absorbs - y axis (greenness): B8 (near infrared reflectance) - vegetation reflects [insert plot]\nTasseled Cap Function: A way of transforming original data to new data with reduced dimensionalirt (using PCA - reducing dimensions while maximising variance). Brightness, associated with spectral bands that show bare soil, man made surfaces or bight materials Greenness, associated with green vegetation Wetness, associated with moisture\n###Landsat Data"
+  },
+  {
+    "objectID": "week_1.html#applications",
+    "href": "week_1.html#applications",
+    "title": "1  Week 1",
+    "section": "2.1 Applications",
+    "text": "2.1 Applications"
+  },
+  {
+    "objectID": "week_1.html#reflection",
+    "href": "week_1.html#reflection",
+    "title": "1  Week 1",
+    "section": "2.2 Reflection",
+    "text": "2.2 Reflection"
+  },
+  {
+    "objectID": "week_2.html",
+    "href": "week_2.html",
+    "title": "2  Week 2",
+    "section": "",
+    "text": "Click here to see my presentation"
+  }
+]

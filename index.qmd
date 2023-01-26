@@ -1,0 +1,25 @@
+# Preface {.unnumbered}
+
+This is a Quarto book.
+
+To learn more about Quarto books visit <https://quarto.org/docs/books>.
+
+```{r}
+1 + 1
+```
+
+::: callout-tip
+## hellooo
+
+this is the main page (index.qmd)
+:::
+
+\[\]
+
+new qmd files can be used as new chapters, which must specify in \_quarto.yml
+
+render to get html files -\> docs folder
+
+github pages
+
+references
