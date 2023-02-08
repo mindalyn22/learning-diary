@@ -1,6 +1,7 @@
-# Week 1
+# Week 1: Getting Started with Remote Sensing
 
 ## Summary
+SORRY I AM WRITING THEM IN A DIFFERENT FILE AND HAVEN'T ADDED THEM INTO HERE YET!!
 
 ### Sensors
 Active vs Passive
@@ -30,10 +31,7 @@ Color Composites
 (4) Short-wave Infrared Composite (B12, B8A and B4) - shows vegetation in green, the darker the greener the denser it is and brown shows built up or bare soil
 ...and there are more 
 
-###Sentinal Data 
-
-
-
+### Sentinal Data 
 
 Spectral Feature Space - Wizard/Tasseled Cap
 - x axis (brightness): B4 (red) - vegetation absorbs 
@@ -45,7 +43,7 @@ Brightness, associated with spectral bands that show bare soil, man made surface
 Greenness, associated with green vegetation
 Wetness, associated with moisture
 
-###Landsat Data
+### Landsat Data
 
 ## Applications
 

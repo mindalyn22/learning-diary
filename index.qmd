@@ -1,25 +1,5 @@
-# Preface {.unnumbered}
+# Hello! {.unnumbered}
 
-This is a Quarto book.
+My name is Mindy and I'm a Master's student of Urban Spatial Science in the Center for Advanced Spatial Analysis (CASA). My background is in web development (full stack) and data engineering.
 
-To learn more about Quarto books visit <https://quarto.org/docs/books>.
-
-```{r}
-1 + 1
-```
-
-::: callout-tip
-## hellooo
-
-this is the main page (index.qmd)
-:::
-
-\[\]
-
-new qmd files can be used as new chapters, which must specify in \_quarto.yml
-
-render to get html files -\> docs folder
-
-github pages
-
-references
+This book is made to document my weekly learning journey through [CASA0023: Remotely Sensing Cities and Environments](https://andrewmaclachlan.github.io/CASA0023/00-course_info.html). Navigate through each week using the menu on the left side.
