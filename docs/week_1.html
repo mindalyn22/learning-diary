@@ -134,10 +134,8 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary"><span class="toc-section-number">1.1</span>  Summary</a>
   <ul class="collapse">
-  <li><a href="#sensors" id="toc-sensors" class="nav-link" data-scroll-target="#sensors"><span class="toc-section-number">1.1.1</span>  Sensors</a></li>
-  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data"><span class="toc-section-number">1.1.2</span>  Data</a></li>
-  <li><a href="#sentinal-data" id="toc-sentinal-data" class="nav-link" data-scroll-target="#sentinal-data"><span class="toc-section-number">2.0.1</span>  Sentinal Data</a></li>
-  <li><a href="#landsat-data" id="toc-landsat-data" class="nav-link" data-scroll-target="#landsat-data"><span class="toc-section-number">2.0.2</span>  Landsat Data</a></li>
+  <li><a href="#overview-of-what-was-covered-in-lecture" id="toc-overview-of-what-was-covered-in-lecture" class="nav-link" data-scroll-target="#overview-of-what-was-covered-in-lecture"><span class="toc-section-number">1.1.1</span>  Overview of what was covered in lecture</a></li>
+  <li><a href="#some-learnings-from-the-practical" id="toc-some-learnings-from-the-practical" class="nav-link" data-scroll-target="#some-learnings-from-the-practical"><span class="toc-section-number">2.0.1</span>  Some learnings from the practical</a></li>
   </ul></li>
   <li><a href="#applications" id="toc-applications" class="nav-link" data-scroll-target="#applications"><span class="toc-section-number">2.1</span>  Applications</a></li>
   <li><a href="#reflection" id="toc-reflection" class="nav-link" data-scroll-target="#reflection"><span class="toc-section-number">2.2</span>  Reflection</a></li>
@@ -165,16 +163,26 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="summary" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="summary"><span class="header-section-number">1.1</span> Summary</h2>
-<p>SORRY I AM WRITING THEM IN A DIFFERENT FILE AND HAVEN’T ADDED THEM INTO HERE YET!!</p>
-<section id="sensors" class="level3" data-number="1.1.1">
-<h3 data-number="1.1.1" class="anchored" data-anchor-id="sensors"><span class="header-section-number">1.1.1</span> Sensors</h3>
-<p>Active vs Passive</p>
+<section id="overview-of-what-was-covered-in-lecture" class="level3" data-number="1.1.1">
+<h3 data-number="1.1.1" class="anchored" data-anchor-id="overview-of-what-was-covered-in-lecture"><span class="header-section-number">1.1.1</span> Overview of what was covered in lecture</h3>
+<section id="active-vs-passive-sensors" class="level5" data-number="1.1.1.0.1">
+<h5 data-number="1.1.1.0.1" class="anchored" data-anchor-id="active-vs-passive-sensors"><span class="header-section-number">1.1.1.0.1</span> Active vs Passive sensors</h5>
+<pre><code>* [make a table]
+* Passive - no emmision. uses available energy. detects reflected energy
+* Active - emits electromagnetic waves then waits to receive them back. can go through clouds. SAR is a type of active sensor.</code></pre>
 </section>
-<section id="data" class="level3" data-number="1.1.2">
-<h3 data-number="1.1.2" class="anchored" data-anchor-id="data"><span class="header-section-number">1.1.2</span> Data</h3>
-<ul>
-<li>different types of resolutions</li>
-</ul>
+<section id="how-electromagnetic-waves-interact-with-earths-surface-and-atmosphere" class="level4" data-number="1.1.1.1">
+<h4 data-number="1.1.1.1" class="anchored" data-anchor-id="how-electromagnetic-waves-interact-with-earths-surface-and-atmosphere"><span class="header-section-number">1.1.1.1</span> How electromagnetic waves interact with earth’s surface and atmosphere</h4>
+<pre><code>* Radiance 
+    * a property of the sensor — how much energy it’s collecting
+    * dependent on light source
+* Reflectance
+    * ratio of light coming to and leaving
+    * it’s a property of a material (like reflectance of grass)
+    * surface reflectance removes effects of light source **and** atmosphere</code></pre>
+</section>
+<section id="different-types-of-resolutions" class="level4" data-number="1.1.1.2">
+<h4 data-number="1.1.1.2" class="anchored" data-anchor-id="different-types-of-resolutions"><span class="header-section-number">1.1.1.2</span> Different types of resolutions</h4>
 <ol type="1">
 <li>spatial</li>
 </ol>
@@ -201,24 +209,39 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li>time of sensor revisiting</li>
 </ul>
-<p>*Can downscale or upscale bands to convert them to diff spatial resolution so we can use more of the spectral data. downscaling is intensive but upscaling (aka resampling) can be done with knn or majority rule.</p>
-<p>bands - [insert bands image]</p>
-<p>Color Composites (1) True Colour Composite (B1=Blue, B2=Green, B3=Red) [insert image] (2) False Color Composite (B8, B4, B3) - Plants reflect near-infrared and green light whilst absorbing red. (3) Atmospheric Penetration Composite - B12, B11, B8A with no visible bands to penetrate atmospheric particles. Vegetation = blue, urban area = white, gray cyan or purple. (4) Short-wave Infrared Composite (B12, B8A and B4) - shows vegetation in green, the darker the greener the denser it is and brown shows built up or bare soil …and there are more</p>
+<p>*Can downscale or upscale bands to convert them to diff spatial resolution so we can use more of the spectral data. downscaling is intensive but upscaling (aka resampling) can be done with (1) knn or (2) majority rule.</p>
+<p>Every feature on earth’s surface has a spectral signature which is the electromagnetic energy it reflects at each spectral band. A few of these bands are visible to us (Red, Blue, and Green), but most aren’t.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="'media/wk1/SpectraclSignature.png'" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Spectral Signatures</figcaption><p></p>
+</figure>
+</div>
+<p>Sensors produce a digital number which represents the amount of energy collected by the sensor. A raw image is a 2D matrix where each pixel represents the raw DN value (one for each band i think). We have to convert these values into radiance, then into reflectance (2 types: top of atmosphere and <strong>bottom of atmosphere aka surface reflectance</strong>). Surface reflectance is the true property of the object (ratio of energy reflected by the object. The DN values are not the true value because the sensor might capture different amounts of energy on different days based on weather conditions.</p>
+<p>The spectral signature is also known as the spectral reflectance. It shows the reflectance ratio for each band (wavelength) for the feature. We know we’re getting the surface reflectance because the data we took from Sentinel 2 and Landsat 8 products have been processed to provide BOA surface reflectance. If a band has a low reflectance value it means that that surface type is absorbing the energy (like water absorbs almost all infrared waves, whereas vegetation highly reflects infrared). Vegetation looks green to us because it reflects a lot of green light.</p>
+<p>Different sensors might give slightly different spectral signatures for the same area of the earth’s surface. This is because they may have different spectral resolutions/sensitivity. The practical is about comparing spectral signatures between Sentinel 2 and Landsat 8 data.</p>
 </section>
-<section id="sentinal-data" class="level3" data-number="2.0.1">
-<h3 data-number="2.0.1" class="anchored" data-anchor-id="sentinal-data"><span class="header-section-number">2.0.1</span> Sentinal Data</h3>
-<p>Spectral Feature Space - Wizard/Tasseled Cap - x axis (brightness): B4 (red) - vegetation absorbs - y axis (greenness): B8 (near infrared reflectance) - vegetation reflects [insert plot]</p>
-<p>Tasseled Cap Function: A way of transforming original data to new data with reduced dimensionalirt (using PCA - reducing dimensions while maximising variance). Brightness, associated with spectral bands that show bare soil, man made surfaces or bight materials Greenness, associated with green vegetation Wetness, associated with moisture</p>
 </section>
-<section id="landsat-data" class="level3" data-number="2.0.2">
-<h3 data-number="2.0.2" class="anchored" data-anchor-id="landsat-data"><span class="header-section-number">2.0.2</span> Landsat Data</h3>
+<section id="some-learnings-from-the-practical" class="level3" data-number="2.0.1">
+<h3 data-number="2.0.1" class="anchored" data-anchor-id="some-learnings-from-the-practical"><span class="header-section-number">2.0.1</span> Some learnings from the practical</h3>
+<p>I chose to look at a region of Singapore for this practical.</p>
+<p>bands <img src="'media/wk1/bands2makeherdance.png'" class="img-fluid" alt="Sentinel Bands"></p>
+<p>Color Composites (1) True Colour Composite (B1=Blue, B2=Green, B3=Red) [insert image] <img src="'media/wk1/TrueColorComposite.png'" class="img-fluid" alt="True Color Composite"> (2) False Color Composite (B8, B4, B3) - Plants reflect near-infrared and green light whilst absorbing red. <img src="'media/wk1/FalseColorComposite.png'" class="img-fluid" alt="False Color Composite"> (3) Atmospheric Penetration Composite - B12, B11, B8A with no visible bands to penetrate atmospheric particles. Vegetation = blue, urban area = white, gray cyan or purple. <img src="'media/wk1/AtmosphericPenetrationComposite.png'" class="img-fluid" alt="Atmospheric Penetration Composite"> (4) Short-wave Infrared Composite (B12, B8A and B4) - shows vegetation in green, the darker the greener the denser it is and brown shows built up or bare soil …and there are more</p>
+<p>Spectral Feature Space - Wizard/Tasseled Cap - x axis (brightness): B4 (red) - vegetation absorbs - y axis (greenness): B8 (near infrared reflectance) - vegetation reflects <img src="'media/wk1/spectralFreatureSpace.png'" class="img-fluid" alt="Spectral Feature Space"> <img src="'media/wk1/b4b8scatterplot.png'" class="img-fluid" alt="Tassled Cap Scatter Plot"></p>
+<p>Tasseled Cap Function: A way of transforming original data to new data with reduced dimensionality (using PCA - reducing dimensions while maximising variance). Brightness, associated with spectral bands that show bare soil, man made surfaces or bight materials Greenness, associated with green vegetation Wetness, associated with moisture <img src="'media/wk1/TasselCapTransformation(BrightGreenWet).png'" class="img-fluid" alt="Tassel Cap Transformation"></p>
 </section>
 </section>
 <section id="applications" class="level2" data-number="2.1">
 <h2 data-number="2.1" class="anchored" data-anchor-id="applications"><span class="header-section-number">2.1</span> Applications</h2>
+<p>Environmental Application: A study was done to assess water quality by looking for particular algae. The researchers asked what is the spectral reflectivity of this type of algae in this type of water? They use a spectroscope to emit electromagnetic radiation onto the aglae and to get the spectral signature. Then when assessing water images, can then search for pixels that are similar to this spectral signature. They write a program to find every pixel that has a a reflectivity of x in the infrared band, a reflectivity of y in the red band, …etc. (Rundquist et. al, 1996)</p>
+<p>Military application: Camouflaging equipment in colors (making them green to hide in trees, but not camouflaging in infrared would mean that if something flew over with infrared sensors, they could be detected. Mentioned in this youtube video: <a href="https://www.youtube.com/watch?v=KF2j4sH7pkE&amp;ab_channel=Boldbayar.R">https://www.youtube.com/watch?v=KF2j4sH7pkE&amp;ab_channel=Boldbayar.R</a></p>
+<p>How can we differentiate between similar looking surfaces? If you have a higher spectral resolution (chop it up into finer bands), you can better differentiate between things that might look similar (like oak tree vs an elm tree, grass vs astroturf)</p>
+<p><img src="'media/wk1/GrassAstroturf.png'" class="img-fluid" alt="Grass vs Astrotuft"> (Lillesane et al., 2015)</p>
 </section>
 <section id="reflection" class="level2" data-number="2.2">
 <h2 data-number="2.2" class="anchored" data-anchor-id="reflection"><span class="header-section-number">2.2</span> Reflection</h2>
+<p>There is so much more to remote sensing than I expected. I had a really basic idea that there were just satellites that took pictures from outer space but I didn’t realise how so many different lengths of electromagnetic waves, beyond those which are visible to us, can give us different types of information.</p>
+<p>I’m interested in the use of these spectral signatures in identifying building materials as I think that could have really useful applications in climate and sustainability. I thought about this article I read from Bloomberg CityLab that assessed heat islands in major cities in relation to the concentration of specific materials and colors (clay buildings and white paint being cooler while concrete was hotter).</p>
 
 
 </section>
