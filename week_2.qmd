@@ -1,5 +1,9 @@
-# Week 2: Xaringan
+---
+title: "Week 2: Xaringan"
+editor: visual
+---
 
 This week we learned how to use Xaringan to make presentations, and to host them with Github Pages.
 
+I made a presentation about the Sentinel-2 sensor.
 Click here to see [my presentation](https://mindalyn22.github.io/sensor-presentation)

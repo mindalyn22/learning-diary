@@ -1,0 +1,74 @@
+---
+title: "Week 7: Classification 2"
+format: html
+editor: visual
+---
+
+## Summary
+
+This week we continued learning about classification. We considered other units to classify beyond the single pixel, as this is not often the best shape to work with.
+
+Both of the following techniques:
+
+-   work best with high spatial resolution imagery
+-   improve the accuracy of classification by reducing noise and variability
+
+### Object Based Image Analysis (OBIA)
+
+Since pixels don't often represent an object, this technique involves creating superpixels by assessing the homogeneity of neighboring pixels and grouping them. The algorithm commonly used is called SLIC (Simple Linear Iterative Clustering). It's similar to DBSCAN in that it finds similar (determined by setting parameter) pixels within a radius, then moves the center point to the center of those pixels. Iterations 4-10 are usually the best.
+
+**Uses:**
+
+-   Once we have the superpixel, we can take the mean value and classify it using other methods we learned about in Week 6
+-   Can also be used for object detection
+
+I liked this gif from the lecture:
+
+![]('media/wk7/obia.gif')
+
+Note that it doesn't consider how smaller cells might be connected to create larger objects, but there are techniques that can be used to merge cells. The decision to merge depends on the application/desired outcome.
+
+### Sub pixel analysis (aka spectral mixture analysis (SMA), aka linear spectral unmixing)
+
+What if you have multiple land cover types within one pixel? This can decrease the accuracy of the classifications. Subpixel analysis aims to overcome this limitation by estimating the proportion of different land cover types within each pixel. It considers spectral signature as a linear combination of the land cover types within the pixel.
+
+To do this, we need "Spectrally pure" pixels, aka end members, which we use a reference to calculate the proportions of these land covers within mixed pixels. We use an inverse of a matrix that contains the end members to "unmix" the mixed pixels.
+
+-   mixed pixel = end member matrix \* fractions
+-   so... fractions = inverse end member matrix \* mixed pixel
+
+One question I have is how we would reconcile end members of the same type of land cover that have different properties? For example, "urban" can consist of many different types of materials that might have different spectral signatures. Or do we just accept that the relative difference between the spectral signatures of concrete vs steel is distinct enough from the difference they have with vegetation or soil?
+
+### Accuracy Assessment
+
+Next we discussed how to assess the accuracy of these classification models.
+
+When assessing accuracy, overall accuracy is often not a very useful measure. We have to find a balance between producer accuracy and user accuracy as both cannot be high simultaneously. We have to determine what is more important to us. We can also use the F1 Score which combines recall and precision, though it doesn't consider true negatives.
+
+| Producer                                                                                  | User                                         |
+|------------------------------------|------------------------------------|
+| Maximising true positives, minimise false positives                                       | Minimising false negatives                   |
+| Recall                                                                                    | Precision                                    |
+| every "plane" is actually a plane                                                         | clouds should not be classified as planes    |
+| true positives but some false positives (predicted urban but land cover that isn't urban) | actually urban but predicted other landcover |
+
+We also learned about best practices for selecting training/test data for these accuracy assessments. I won't go into detail but these are what they are:
+
+-   Test / train split by random sampling
+-   Cross Validation - do multiple iterations with different test train splits and take the mean accuracy
+-   Leave one out cross validation - repeatedly running the model on all data except for 1 observation which then gets used as the test. this allows us to maximise training data and results in high accuracy, however very computationally expensive
+-   spatial cross validation - dealing with spatial autocorrelation between training and test splits by using k-means clustering in each fold
+
+![]('media/wk7/SpatialCrossValidation.png')
+
+## Applications
+
+Beyond more accurate land cover classification, object based image analysis can also be used for object detection. One concerning application is the usage of OBIA by governmental border agencies to detect small ships (aka boats carrying irregular migrants / asylum seekers). Frontex, the European Union's border security agency, has been using SAR images to detect these boats with much success.
+
+An aside about their motivations: They claim that this detection is crucial for search and rescue efforts with the goal of saving lives. In reality, despite accurate early detection, in many cases, Frontex has failed to rescue boats in distress. Their primary purpose is to prevent irregular migration, and this type of surveillance gives insight into the new pathways being taken by migrants --- making it easier block their routes and inevitably stop them.
+
+Back to the remote sensing --- a paper published in 2019 uses OBIA with combined high-and medium-resolution optical and radar images (tested with WorldView-2, QuickBird, GeoEye-1, Sentinel-2A, COSMO-SkyMed, and Sentinel-1 data) to detect vessels. They have similar accuracy to the SUMO (Search for Unidentified Maritime Object) algorithm, used by Frontex, in terms of true positives but returns less false positives (both elements of producer accuracy). (<https://www.researchgate.net/publication/330322311_Object-based_image_analysis_approach_for_vessel_detection_on_optical_and_radar_images>)
+
+## Reflection
+
+While it's very impressive that we are able to detect or classify objects with such accuracy at such granular levels using these innovative methods, it's also scary to think about how this technology might be abused and threaten human life. We spend most of our time in CASA talking about leveraging data to improve the urban experience, improve lives, save the environment, etc., but we don't often discuss the dangerous and harmful applications of these techniques. Thinking about the historic origins of many science and technological breakthroughs, many were researched and developed under state sponsorship during wartime, for military purposes. And.... it's honestly so sad that some of our best inventions were motivated by violence, and political/economic interests abroad rather than the desire to improve lives at home. Anyways...how do we navigate that as academics and researchers --- the paper I referenced above did not have an explicit political agenda but produced results that could further implicate vulnerable populations if leveraged by the wrong people (aka border control).

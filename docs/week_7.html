@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.1.189">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>CASA0023 Remote Sensing Learning Diary - 7&nbsp; Week 7: Classification 2</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./week_8.html" rel="next">
+<link href="./week_6.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Week 7: Classification 2</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">CASA0023 Remote Sensing Learning Diary</a> 
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Hello!</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week_1.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Week 1: Getting Started with Remote Sensing</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week_2.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Week 2: Xaringan</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week_3.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Week 3: Corrections</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week_4.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Week 4: Policy</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week_5.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Week 5: Google Earth Engine</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week_6.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Week 6: Classification 1</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week_7.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Week 7: Classification 2</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week_8.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Week 8: Temperature and Policy</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">References</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary"><span class="toc-section-number">7.1</span>  Summary</a>
+  <ul class="collapse">
+  <li><a href="#object-based-image-analysis-obia" id="toc-object-based-image-analysis-obia" class="nav-link" data-scroll-target="#object-based-image-analysis-obia"><span class="toc-section-number">7.1.1</span>  Object Based Image Analysis (OBIA)</a></li>
+  <li><a href="#sub-pixel-analysis-aka-spectral-mixture-analysis-sma-aka-linear-spectral-unmixing" id="toc-sub-pixel-analysis-aka-spectral-mixture-analysis-sma-aka-linear-spectral-unmixing" class="nav-link" data-scroll-target="#sub-pixel-analysis-aka-spectral-mixture-analysis-sma-aka-linear-spectral-unmixing"><span class="toc-section-number">7.1.2</span>  Sub pixel analysis (aka spectral mixture analysis (SMA), aka linear spectral unmixing)</a></li>
+  <li><a href="#accuracy-assessment" id="toc-accuracy-assessment" class="nav-link" data-scroll-target="#accuracy-assessment"><span class="toc-section-number">7.1.3</span>  Accuracy Assessment</a></li>
+  </ul></li>
+  <li><a href="#applications" id="toc-applications" class="nav-link" data-scroll-target="#applications"><span class="toc-section-number">7.2</span>  Applications</a></li>
+  <li><a href="#reflection" id="toc-reflection" class="nav-link" data-scroll-target="#reflection"><span class="toc-section-number">7.3</span>  Reflection</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Week 7: Classification 2</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<section id="summary" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="summary"><span class="header-section-number">7.1</span> Summary</h2>
+<p>This week we continued learning about classification. We considered other units to classify beyond the single pixel, as this is not often the best shape to work with.</p>
+<p>Both of the following techniques:</p>
+<ul>
+<li>work best with high spatial resolution imagery</li>
+<li>improve the accuracy of classification by reducing noise and variability</li>
+</ul>
+<section id="object-based-image-analysis-obia" class="level3" data-number="7.1.1">
+<h3 data-number="7.1.1" class="anchored" data-anchor-id="object-based-image-analysis-obia"><span class="header-section-number">7.1.1</span> Object Based Image Analysis (OBIA)</h3>
+<p>Since pixels don’t often represent an object, this technique involves creating superpixels by assessing the homogeneity of neighboring pixels and grouping them. The algorithm commonly used is called SLIC (Simple Linear Iterative Clustering). It’s similar to DBSCAN in that it finds similar (determined by setting parameter) pixels within a radius, then moves the center point to the center of those pixels. Iterations 4-10 are usually the best.</p>
+<p><strong>Uses:</strong></p>
+<ul>
+<li>Once we have the superpixel, we can take the mean value and classify it using other methods we learned about in Week 6</li>
+<li>Can also be used for object detection</li>
+</ul>
+<p>I liked this gif from the lecture:</p>
+<p><img src="'media/wk7/obia.gif'" class="img-fluid"></p>
+<p>Note that it doesn’t consider how smaller cells might be connected to create larger objects, but there are techniques that can be used to merge cells. The decision to merge depends on the application/desired outcome.</p>
+</section>
+<section id="sub-pixel-analysis-aka-spectral-mixture-analysis-sma-aka-linear-spectral-unmixing" class="level3" data-number="7.1.2">
+<h3 data-number="7.1.2" class="anchored" data-anchor-id="sub-pixel-analysis-aka-spectral-mixture-analysis-sma-aka-linear-spectral-unmixing"><span class="header-section-number">7.1.2</span> Sub pixel analysis (aka spectral mixture analysis (SMA), aka linear spectral unmixing)</h3>
+<p>What if you have multiple land cover types within one pixel? This can decrease the accuracy of the classifications. Subpixel analysis aims to overcome this limitation by estimating the proportion of different land cover types within each pixel. It considers spectral signature as a linear combination of the land cover types within the pixel.</p>
+<p>To do this, we need “Spectrally pure” pixels, aka end members, which we use a reference to calculate the proportions of these land covers within mixed pixels. We use an inverse of a matrix that contains the end members to “unmix” the mixed pixels.</p>
+<ul>
+<li>mixed pixel = end member matrix * fractions</li>
+<li>so… fractions = inverse end member matrix * mixed pixel</li>
+</ul>
+<p>One question I have is how we would reconcile end members of the same type of land cover that have different properties? For example, “urban” can consist of many different types of materials that might have different spectral signatures. Or do we just accept that the relative difference between the spectral signatures of concrete vs steel is distinct enough from the difference they have with vegetation or soil?</p>
+</section>
+<section id="accuracy-assessment" class="level3" data-number="7.1.3">
+<h3 data-number="7.1.3" class="anchored" data-anchor-id="accuracy-assessment"><span class="header-section-number">7.1.3</span> Accuracy Assessment</h3>
+<p>Next we discussed how to assess the accuracy of these classification models.</p>
+<p>When assessing accuracy, overall accuracy is often not a very useful measure. We have to find a balance between producer accuracy and user accuracy as both cannot be high simultaneously. We have to determine what is more important to us. We can also use the F1 Score which combines recall and precision, though it doesn’t consider true negatives.</p>
+<table class="table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Producer</th>
+<th>User</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Maximising true positives, minimise false positives</td>
+<td>Minimising false negatives</td>
+</tr>
+<tr class="even">
+<td>Recall</td>
+<td>Precision</td>
+</tr>
+<tr class="odd">
+<td>every “plane” is actually a plane</td>
+<td>clouds should not be classified as planes</td>
+</tr>
+<tr class="even">
+<td>true positives but some false positives (predicted urban but land cover that isn’t urban)</td>
+<td>actually urban but predicted other landcover</td>
+</tr>
+</tbody>
+</table>
+<p>We also learned about best practices for selecting training/test data for these accuracy assessments. I won’t go into detail but these are what they are:</p>
+<ul>
+<li>Test / train split by random sampling</li>
+<li>Cross Validation - do multiple iterations with different test train splits and take the mean accuracy</li>
+<li>Leave one out cross validation - repeatedly running the model on all data except for 1 observation which then gets used as the test. this allows us to maximise training data and results in high accuracy, however very computationally expensive</li>
+<li>spatial cross validation - dealing with spatial autocorrelation between training and test splits by using k-means clustering in each fold</li>
+</ul>
+<p><img src="'media/wk7/SpatialCrossValidation.png'" class="img-fluid"></p>
+</section>
+</section>
+<section id="applications" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="applications"><span class="header-section-number">7.2</span> Applications</h2>
+<p>Beyond more accurate land cover classification, object based image analysis can also be used for object detection. One concerning application is the usage of OBIA by governmental border agencies to detect small ships (aka boats carrying irregular migrants / asylum seekers). Frontex, the European Union’s border security agency, has been using SAR images to detect these boats with much success.</p>
+<p>An aside about their motivations: They claim that this detection is crucial for search and rescue efforts with the goal of saving lives. In reality, despite accurate early detection, in many cases, Frontex has failed to rescue boats in distress. Their primary purpose is to prevent irregular migration, and this type of surveillance gives insight into the new pathways being taken by migrants — making it easier block their routes and inevitably stop them.</p>
+<p>Back to the remote sensing — a paper published in 2019 uses OBIA with combined high-and medium-resolution optical and radar images (tested with WorldView-2, QuickBird, GeoEye-1, Sentinel-2A, COSMO-SkyMed, and Sentinel-1 data) to detect vessels. They have similar accuracy to the SUMO (Search for Unidentified Maritime Object) algorithm, used by Frontex, in terms of true positives but returns less false positives (both elements of producer accuracy). (<a href="https://www.researchgate.net/publication/330322311_Object-based_image_analysis_approach_for_vessel_detection_on_optical_and_radar_images" class="uri">https://www.researchgate.net/publication/330322311_Object-based_image_analysis_approach_for_vessel_detection_on_optical_and_radar_images</a>)</p>
+</section>
+<section id="reflection" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="reflection"><span class="header-section-number">7.3</span> Reflection</h2>
+<p>While it’s very impressive that we are able to detect or classify objects with such accuracy at such granular levels using these innovative methods, it’s also scary to think about how this technology might be abused and threaten human life. We spend most of our time in CASA talking about leveraging data to improve the urban experience, improve lives, save the environment, etc., but we don’t often discuss the dangerous and harmful applications of these techniques. Thinking about the historic origins of many science and technological breakthroughs, many were researched and developed under state sponsorship during wartime, for military purposes. And…. it’s honestly so sad that some of our best inventions were motivated by violence, and political/economic interests abroad rather than the desire to improve lives at home. Anyways…how do we navigate that as academics and researchers — the paper I referenced above did not have an explicit political agenda but produced results that could further implicate vulnerable populations if leveraged by the wrong people (aka border control).</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./week_6.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Week 6: Classification 1</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./week_8.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Week 8: Temperature and Policy</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>
