@@ -101,7 +101,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./week_1.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Summary</span></a>
+  <a href="./week_1.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Week 1: Getting Started with Remote Sensing</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -126,17 +126,17 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./week_6.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">week_6</span></a>
+  <a href="./week_6.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Week 6: Classification 1</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./week_7.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">week_6</span></a>
+  <a href="./week_7.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Week 7: Classification 2</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./week_8.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">week_8</span></a>
+  <a href="./week_8.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Week 8: Temperature and Policy</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -157,7 +157,6 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#image-correction" id="toc-image-correction" class="nav-link" data-scroll-target="#image-correction"><span class="toc-section-number">3.1.1</span>  Image correction</a></li>
   <li><a href="#joining-data-sets" id="toc-joining-data-sets" class="nav-link" data-scroll-target="#joining-data-sets"><span class="toc-section-number">3.1.2</span>  Joining data sets</a></li>
-  <li><a href="#image-enhancements" id="toc-image-enhancements" class="nav-link" data-scroll-target="#image-enhancements"><span class="toc-section-number">3.1.3</span>  Image Enhancements</a></li>
   </ul></li>
   <li><a href="#applications" id="toc-applications" class="nav-link" data-scroll-target="#applications"><span class="toc-section-number">3.2</span>  Applications</a></li>
   <li><a href="#reflection" id="toc-reflection" class="nav-link" data-scroll-target="#reflection"><span class="toc-section-number">3.3</span>  Reflection</a></li>
@@ -227,19 +226,16 @@ ul.task-list li input[type="checkbox"] {
 <h3 data-number="3.1.2" class="anchored" data-anchor-id="joining-data-sets"><span class="header-section-number">3.1.2</span> Joining data sets</h3>
 <p>The second topic we discussed was joining data sets.</p>
 <p>When we need to combine multiple images in order to cover our entire study area, we can use a technique called “Mosaicking”, which involves feathering the images. Two adjacent images will overlap slightly, and here, one easy solution is to take the mean of the overlapping pixels (but there are more sophisticated methods too)</p>
-<p>[insert practical images]</p>
-<p>These images are from practical 5</p>
-</section>
-<section id="image-enhancements" class="level3" data-number="3.1.3">
-<h3 data-number="3.1.3" class="anchored" data-anchor-id="image-enhancements"><span class="header-section-number">3.1.3</span> Image Enhancements</h3>
+<p>These images are from practical 5:</p>
+<p><img src="media/wk3/premosaic.png" class="img-fluid" alt="3 overlapping images not mosaicked yet"> <img src="media/wk3/mosaic.png" class="img-fluid" alt="Mosaicked – mean taken of the overlapping pixels"> ### Image Enhancements</p>
 <p>Once we have our corrected imagery, we can apply enhancements highlight different types of information that might be useful to our study. Many of these techniques help improve the accuracy of land cover classification. Here are some types of enhancements:</p>
 <ul>
 <li>Contrast enhancement - stretching the color range to improve the visual quality of the image.</li>
 <li>Ratioing - dividing the values of two spectral bands to create a new image where the pixel values represent the ratio of the two bands. This helps highlight certain features in the image that may not be as visible in the individual bands.</li>
-<li>Filtering</li>
-<li>PCA</li>
-<li>Measuring Texture</li>
-<li>Image fusion</li>
+<li>Filtering - Low-pass filters are used to blur the image and remove high-frequency noise, while high-pass filters sharpen the image and enhance edges. Median filters are used to remove noise spikes or salt and pepper noise, while mean filters average the pixel values in a given neighborhood to reduce noise.</li>
+<li>PCA - Capturing most of the differences within less bands</li>
+<li>Measuring Texture - looking at the spatial arrangement and variation of grey pixel values in an image. Provides information about the spatial variation of surface properties, such as roughness, coarseness, and regularity.</li>
+<li>Image fusion - fusing together images/bands from multiple sensors</li>
 </ul>
 </section>
 </section>

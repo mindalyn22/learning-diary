@@ -125,17 +125,17 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./week_6.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">week_6</span></a>
+  <a href="./week_6.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Week 6: Classification 1</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./week_7.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">week_6</span></a>
+  <a href="./week_7.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Week 7: Classification 2</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./week_8.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">week_8</span></a>
+  <a href="./week_8.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Week 8: Temperature and Policy</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -154,8 +154,11 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary"><span class="toc-section-number">1.1</span>  Summary</a>
   <ul class="collapse">
-  <li><a href="#overview-of-what-was-covered-in-lecture" id="toc-overview-of-what-was-covered-in-lecture" class="nav-link" data-scroll-target="#overview-of-what-was-covered-in-lecture"><span class="toc-section-number">1.1.1</span>  Overview of what was covered in lecture</a></li>
-  <li><a href="#some-learnings-from-the-practical" id="toc-some-learnings-from-the-practical" class="nav-link" data-scroll-target="#some-learnings-from-the-practical"><span class="toc-section-number">1.1.2</span>  Some learnings from the practical</a></li>
+  <li><a href="#sensor-types" id="toc-sensor-types" class="nav-link" data-scroll-target="#sensor-types"><span class="toc-section-number">1.1.1</span>  Sensor types</a></li>
+  <li><a href="#how-electromagnetic-waves-interact-with-earths-surface-and-atmosphere" id="toc-how-electromagnetic-waves-interact-with-earths-surface-and-atmosphere" class="nav-link" data-scroll-target="#how-electromagnetic-waves-interact-with-earths-surface-and-atmosphere"><span class="toc-section-number">1.1.2</span>  How electromagnetic waves interact with earth’s surface and atmosphere</a></li>
+  <li><a href="#different-types-of-resolutions" id="toc-different-types-of-resolutions" class="nav-link" data-scroll-target="#different-types-of-resolutions"><span class="toc-section-number">1.1.3</span>  Different types of resolutions</a></li>
+  <li><a href="#spectral-signatures" id="toc-spectral-signatures" class="nav-link" data-scroll-target="#spectral-signatures"><span class="toc-section-number">1.1.4</span>  Spectral Signatures</a></li>
+  <li><a href="#some-learnings-from-the-practical" id="toc-some-learnings-from-the-practical" class="nav-link" data-scroll-target="#some-learnings-from-the-practical"><span class="toc-section-number">1.1.5</span>  Some learnings from the practical</a></li>
   </ul></li>
   <li><a href="#applications" id="toc-applications" class="nav-link" data-scroll-target="#applications"><span class="toc-section-number">1.2</span>  Applications</a></li>
   <li><a href="#reflection" id="toc-reflection" class="nav-link" data-scroll-target="#reflection"><span class="toc-section-number">1.3</span>  Reflection</a></li>
@@ -183,28 +186,66 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="summary" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="summary"><span class="header-section-number">1.1</span> Summary</h2>
-<section id="overview-of-what-was-covered-in-lecture" class="level3" data-number="1.1.1">
-<h3 data-number="1.1.1" class="anchored" data-anchor-id="overview-of-what-was-covered-in-lecture"><span class="header-section-number">1.1.1</span> Overview of what was covered in lecture</h3>
-<section id="active-vs-passive-sensors" class="level4" data-number="1.1.1.1">
-<h4 data-number="1.1.1.1" class="anchored" data-anchor-id="active-vs-passive-sensors"><span class="header-section-number">1.1.1.1</span> Active vs Passive sensors</h4>
-<pre><code>* [make a table]
-* Passive - no emmision. uses available energy. detects reflected energy
-* Active - emits electromagnetic waves then waits to receive them back. can go through clouds. SAR is a type of active sensor.</code></pre>
+<p>In the first lecture, we started off with an overview of different types of sensors, how electromagnetic waves interact with earth’s surface and atmosphere, different types of resolutions, spectral bands and spectral signatures. I will summarise each of these topics then talk about some findings from the practical.</p>
+<section id="sensor-types" class="level3" data-number="1.1.1">
+<h3 data-number="1.1.1" class="anchored" data-anchor-id="sensor-types"><span class="header-section-number">1.1.1</span> Sensor types</h3>
+<p>Sensors can be active of passive. What does that mean? See the table below:</p>
+<table class="table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Passive</th>
+<th>Active</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>No emission</td>
+<td>Emits electromagnetic waves then waits to receive them back.</td>
+</tr>
+<tr class="even">
+<td>Uses available energy</td>
+<td>Can go through clouds.</td>
+</tr>
+<tr class="odd">
+<td>Detects reflected energy</td>
+<td>SAR is a type of active sensor.</td>
+</tr>
+</tbody>
+</table>
+<p><img src="media/wk1/sensortypes.png" class="img-fluid"></p>
 </section>
-<section id="how-electromagnetic-waves-interact-with-earths-surface-and-atmosphere" class="level4" data-number="1.1.1.2">
-<h4 data-number="1.1.1.2" class="anchored" data-anchor-id="how-electromagnetic-waves-interact-with-earths-surface-and-atmosphere"><span class="header-section-number">1.1.1.2</span> How electromagnetic waves interact with earth’s surface and atmosphere</h4>
-<pre><code>* Radiance 
-    * a property of the sensor — how much energy it’s collecting
-    * dependent on light source
-* Reflectance
-    * ratio of light coming to and leaving
-    * it’s a property of a material (like reflectance of grass)
-    * surface reflectance removes effects of light source **and** atmosphere</code></pre>
+<section id="how-electromagnetic-waves-interact-with-earths-surface-and-atmosphere" class="level3" data-number="1.1.2">
+<h3 data-number="1.1.2" class="anchored" data-anchor-id="how-electromagnetic-waves-interact-with-earths-surface-and-atmosphere"><span class="header-section-number">1.1.2</span> How electromagnetic waves interact with earth’s surface and atmosphere</h3>
+<ul>
+<li>Radiance
+<ul>
+<li>a property of the sensor — how much energy it’s collecting</li>
+<li>dependent on light source</li>
+</ul></li>
+<li>Reflectance
+<ul>
+<li>ratio of light coming to and leaving</li>
+<li>it’s a property of a material (like reflectance of grass)</li>
+<li>surface reflectance removes effects of light source <strong>and</strong> atmosphere</li>
+</ul></li>
+</ul>
 </section>
-<section id="different-types-of-resolutions" class="level4" data-number="1.1.1.3">
-<h4 data-number="1.1.1.3" class="anchored" data-anchor-id="different-types-of-resolutions"><span class="header-section-number">1.1.1.3</span> Different types of resolutions</h4>
-<p>(make this a table too) 1. spatial * size of raster cell (ex: 10m. RBG are all 10m bands) 2. spectral * electromagnetic spectrum * number of bands (ex: RGB is 3 bands) 3. radiometric * bits * granularity of energy 4. temporal * time of sensor revisiting</p>
-<p>*Can downscale or upscale bands to convert them to diff spatial resolution so we can use more of the spectral data. downscaling is intensive but upscaling (aka resampling) can be done with (1) knn or (2) majority rule.</p>
+<section id="different-types-of-resolutions" class="level3" data-number="1.1.3">
+<h3 data-number="1.1.3" class="anchored" data-anchor-id="different-types-of-resolutions"><span class="header-section-number">1.1.3</span> Different types of resolutions</h3>
+<ol type="1">
+<li><strong>spatial</strong> - size of raster cell (ex: 10m. RBG are all 10m bands)</li>
+<li><strong>spectral</strong> - electromagnetic spectrum, number of bands (ex: RGB is 3 bands)</li>
+<li><strong>radiometric</strong> - granularity of energy that sensor captures (in bits)</li>
+<li><strong>temporal</strong> - time of sensor revisiting (how often / time of day)</li>
+</ol>
+<p>*Can downscale or upscale bands to convert them to diff spatial resolution so we can use more of the spectral data. Downscaling is intensive but upscaling (aka resampling) can be done with (1) knn or (2) majority rule.</p>
+</section>
+<section id="spectral-signatures" class="level3" data-number="1.1.4">
+<h3 data-number="1.1.4" class="anchored" data-anchor-id="spectral-signatures"><span class="header-section-number">1.1.4</span> Spectral Signatures</h3>
 <p>Every feature on earth’s surface has a spectral signature which is the electromagnetic energy it reflects at each spectral band. A few of these bands are visible to us (Red, Blue, and Green), but most aren’t.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -216,9 +257,8 @@ ul.task-list li input[type="checkbox"] {
 <p>The spectral signature is also known as the spectral reflectance. It shows the reflectance ratio for each band (wavelength) for the feature. We know we’re getting the surface reflectance because the data we took from Sentinel 2 and Landsat 8 products have been processed to provide BOA surface reflectance. If a band has a low reflectance value it means that that surface type is absorbing the energy (like water absorbs almost all infrared waves, whereas vegetation highly reflects infrared). Vegetation looks green to us because it reflects a lot of green light.</p>
 <p>Different sensors might give slightly different spectral signatures for the same area of the earth’s surface. This is because they may have different spectral resolutions/sensitivity. The practical is about comparing spectral signatures between Sentinel 2 and Landsat 8 data.</p>
 </section>
-</section>
-<section id="some-learnings-from-the-practical" class="level3" data-number="1.1.2">
-<h3 data-number="1.1.2" class="anchored" data-anchor-id="some-learnings-from-the-practical"><span class="header-section-number">1.1.2</span> Some learnings from the practical</h3>
+<section id="some-learnings-from-the-practical" class="level3" data-number="1.1.5">
+<h3 data-number="1.1.5" class="anchored" data-anchor-id="some-learnings-from-the-practical"><span class="header-section-number">1.1.5</span> Some learnings from the practical</h3>
 <p>I chose to look at a region of Singapore for this practical.</p>
 <p>bands <img src="media/wk1/bands2makeherdance.png" class="img-fluid" alt="Sentinel Bands"></p>
 <p>Color Composites (1) True Colour Composite (B1=Blue, B2=Green, B3=Red) [insert image] <img src="media/wk1/TrueColorComposite.png" class="img-fluid" alt="True Color Composite"> (2) False Color Composite (B8, B4, B3) - Plants reflect near-infrared and green light whilst absorbing red. <img src="media/wk1/FalseColorComposite.png" class="img-fluid" alt="False Color Composite"> (3) Atmospheric Penetration Composite - B12, B11, B8A with no visible bands to penetrate atmospheric particles. Vegetation = blue, urban area = white, gray cyan or purple. <img src="media/wk1/AtmosphericPenetrationComposite.png" class="img-fluid" alt="Atmospheric Penetration Composite"> (4) Short-wave Infrared Composite (B12, B8A and B4) - shows vegetation in green, the darker the greener the denser it is and brown shows built up or bare soil …and there are more</p>
@@ -229,7 +269,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="applications" class="level2" data-number="1.2">
 <h2 data-number="1.2" class="anchored" data-anchor-id="applications"><span class="header-section-number">1.2</span> Applications</h2>
 <p>Environmental Application: A study was done to assess water quality by looking for particular algae. The researchers asked what is the spectral reflectivity of this type of algae in this type of water? They use a spectroscope to emit electromagnetic radiation onto the aglae and to get the spectral signature. Then when assessing water images, can then search for pixels that are similar to this spectral signature. They write a program to find every pixel that has a a reflectivity of x in the infrared band, a reflectivity of y in the red band, …etc. (Rundquist et. al, 1996)</p>
-<p>Military application: Camouflaging equipment in colors (making them green to hide in trees, but not camouflaging in infrared would mean that if something flew over with infrared sensors, they could be detected. Mentioned in this youtube video: <a href="https://www.youtube.com/watch?v=KF2j4sH7pkE&amp;ab_channel=Boldbayar.R">https://www.youtube.com/watch?v=KF2j4sH7pkE&amp;ab_channel=Boldbayar.R</a></p>
+<p>Military application: Camouflaging equipment in colors (making them green to hide in trees, but not camouflaging in infrared would mean that if something flew over with infrared sensors, they could be detected. Mentioned in this youtube video: <a href="https://www.youtube.com/watch?v=KF2j4sH7pkE&amp;ab_channel=Boldbayar.R" class="uri">https://www.youtube.com/watch?v=KF2j4sH7pkE&amp;ab_channel=Boldbayar.R</a></p>
 <p>How can we differentiate between similar looking surfaces? If you have a higher spectral resolution (chop it up into finer bands), you can better differentiate between things that might look similar (like oak tree vs an elm tree, grass vs astroturf)</p>
 <p><img src="media/wk1/GrassAstroturf.png" class="img-fluid" alt="Grass vs Astrotuft"> (Lillesane et al., 2015)</p>
 </section>

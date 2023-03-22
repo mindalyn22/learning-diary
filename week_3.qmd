@@ -37,20 +37,20 @@ The second topic we discussed was joining data sets.
 
 When we need to combine multiple images in order to cover our entire study area, we can use a technique called “Mosaicking”, which involves feathering the images. Two adjacent images will overlap slightly, and here, one easy solution is to take the mean of the overlapping pixels (but there are more sophisticated methods too)
 
-[insert practical images]
+These images are from practical 5:
 
-These images are from practical 5
-
+![3 overlapping images not mosaicked yet](media/wk3/premosaic.png)
+![Mosaicked -- mean taken of the overlapping pixels](media/wk3/mosaic.png)
 ### Image Enhancements
 
 Once we have our corrected imagery, we can apply enhancements highlight different types of information that might be useful to our study. Many of these techniques help improve the accuracy of land cover classification. Here are some types of enhancements:
 
 - Contrast enhancement - stretching the color range to improve the visual quality of the image.
 - Ratioing - dividing the values of two spectral bands to create a new image where the pixel values represent the ratio of the two bands. This helps highlight certain features in the image that may not be as visible in the individual bands.
-- Filtering
-- PCA
-- Measuring Texture
-- Image fusion
+- Filtering - Low-pass filters are used to blur the image and remove high-frequency noise, while high-pass filters sharpen the image and enhance edges. Median filters are used to remove noise spikes or salt and pepper noise, while mean filters average the pixel values in a given neighborhood to reduce noise.
+- PCA - Capturing most of the differences within less bands 
+- Measuring Texture - looking at the spatial arrangement and variation of grey pixel values in an image. Provides information about the spatial variation of surface properties, such as roughness, coarseness, and regularity.
+- Image fusion - fusing together images/bands from multiple sensors
         
 
 ## Applications
