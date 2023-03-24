@@ -8,6 +8,10 @@ editor: visual
 
 While we've spent the past few weeks learning how to correct sensor data, we've now been introduced to Google Earth Engine, a service for processing, analysing, and visualising geospatial data, which also provides a vast library of **super massive** datasets with already corrected data. It allows for processing at **scale**. Its user interface and development environment make for easy usage of their processing libraries, reading documentation, inspecting output, and visualisation.
 
+The interface:
+![](media/wk5/gee.png)
+Source: [GEE Interactive Development Environment](https://www.researchgate.net/publication/318246365/figure/fig3/AS:667869226483731@1536243840816/The-Earth-Engine-interactive-development-environment.png)
+
 Typical processes that can be done in EE include:
 
 -   data preprocessing (filtering by time frame, masking out clouds)

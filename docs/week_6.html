@@ -20,25 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}
 </style>
 
 
@@ -202,7 +183,7 @@ div.csl-indent {
 <p>Classification can be supervised or unsupervised. We also have generic classifier methods and ones that are specific to remote sensing data. They are summarised in this chart I made in Miro below:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="media/wk6/classifiers.jpg" class="img-fluid figure-img"></p>
+<p><img src="media/wk6/Classifiers.jpg" class="img-fluid figure-img"></p>
 <p></p><figcaption class="figure-caption">Note: We need to be careful about not overfitting (when the model fits the training data too well, and is not generalisable enough to work on new input data). There are two ways: 1) limiting how much trees grow by setting a minimum number of elements a leaf should have (top down) 2) weakest link pruning (bottom up and more complicated).</figcaption><p></p>
 </figure>
 </div>
@@ -210,11 +191,11 @@ div.csl-indent {
 <section id="applications" class="level2" data-number="6.2">
 <h2 data-number="6.2" class="anchored" data-anchor-id="applications"><span class="header-section-number">6.2</span> Applications</h2>
 <p>As mentioned above, classification is useful for understanding LULC change over time, or looking at the relationship between LULC and other variables such as surface temperature or pollution, susceptibility to hazards.</p>
-<p>A study done in Amman City, Jordan provides an example of using remote sensing data and classification techniques to inform urban planning in historically data-poor environments <span class="citation" data-cites="al-bilbisi2019">(<a href="references.html#ref-al-bilbisi2019" role="doc-biblioref">Al-Bilbisi 2019</a>)</span>. The aim was to understand patterns and causes of urban expansion from 1987 - 2017.</p>
+<p>A study done in Amman City, Jordan provides an example of using remote sensing data and classification techniques to inform urban planning in historically data-poor environments <span class="citation" data-cites="al-bilbisi2019">(<a href="references.html#ref-al-bilbisi2019" role="doc-biblioref"><strong>al-bilbisi2019?</strong></a>)</span>. The aim was to understand patterns and causes of urban expansion from 1987 - 2017.</p>
 <p><strong>Methodology</strong></p>
 <p>They used Landsat images (6 spectral bands) from 1987, 1997, 2007, and 2017 and classified pixels into 4 land use/covers: urban area, vegetation, exposed rocks, and exposed soils. They use the maximum likelihood supervised classification algorithm, however they don’t explain why they chose it. They do however achieve an accuracy rate of above 85% for each image (range is 86.4% - 90.2%), which seems pretty decent!</p>
 <p>They then employed a change detection technique between the images for each year. Here is the final output: <img src="media/wk6/LULCAmaan.png" class="img-fluid"></p>
-<p>Source: <span class="citation" data-cites="al-bilbisi2019">(<a href="references.html#ref-al-bilbisi2019" role="doc-biblioref">Al-Bilbisi 2019</a>)</span></p>
+<p>Source: <span class="citation" data-cites="al-bilbisi2019">(<a href="references.html#ref-al-bilbisi2019" role="doc-biblioref"><strong>al-bilbisi2019?</strong></a>)</span></p>
 <p><strong>Findings and Discussion</strong></p>
 <p>They found that the most rapid rate of expansion occurred during the 1987-1997 period, and both the 1997-2007 and 2007-2017 periods experienced stable growth. They tied these findings to 2 types of population growth. The first is that the Gulf War occurred in 1991, causing a huge influx of Jordanians returning to Jordan from Gulf countries. The second is the 2 major influxes of refugee populations from 1) the invasion of Iraq in 2003 and 2) the civil war in Syria in 2011. What they found was, the most urban expansion occurred after the start of the Gulf war in the first image period. However, despite the population growing significantly from the two refugee influxes, urban expansion continued at a steady rate. The returning Jordanians mostly built private houses on their own land or bought/rented houses , resulting in lots of construction. In contrast, most of the refugees that entered stayed in refugee camps near the border.</p>
 <p>They identify that the main type of urban growth in the first period was concentric, expanding mainly occurs along transport infrastructure that extend from the core. The expansion was horizontal as opposed to vertical. In the second and third periods, the expansion was both concentric and multiple nuclei, with new urban centers forming. They also experienced more vertical growth.</p>
@@ -228,11 +209,6 @@ div.csl-indent {
 <p>Within medical research, say for classifying medical diagnoses for example, accuracy is likely more important than interpretability. However, within social science research, it seems that interpretability would have a higher priority because the goal is more oriented towards understanding certain phenomena or why factors drive particular outcomes, rather than simply predicting them.</p>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
-<div id="ref-al-bilbisi2019" class="csl-entry" role="doc-biblioentry">
-Al-Bilbisi, Hussam. 2019. <span>“Spatial Monitoring of Urban Expansion Using Satellite Remote Sensing Images: A Case Study of Amman City, Jordan.”</span> <em>Sustainability</em> 11 (8): 2260. <a href="https://doi.org/10.3390/su11082260">https://doi.org/10.3390/su11082260</a>.
-</div>
-</div>
 </section>
 
 </main> <!-- /main -->

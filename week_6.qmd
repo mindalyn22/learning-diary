@@ -10,7 +10,7 @@ This week, we learned about classification, a machine learning technique, and ho
 
 Classification can be supervised or unsupervised. We also have generic classifier methods and ones that are specific to remote sensing data. They are summarised in this chart I made in Miro below:
 
-![Note: We need to be careful about not overfitting (when the model fits the training data too well, and is not generalisable enough to work on new input data). There are two ways: 1) limiting how much trees grow by setting a minimum number of elements a leaf should have (top down) 2) weakest link pruning (bottom up and more complicated).](media/wk6/classifiers.jpg)
+![Note: We need to be careful about not overfitting (when the model fits the training data too well, and is not generalisable enough to work on new input data). There are two ways: 1) limiting how much trees grow by setting a minimum number of elements a leaf should have (top down) 2) weakest link pruning (bottom up and more complicated).](media/wk6/Classifiers.jpg)
 
 ## Applications
 

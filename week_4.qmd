@@ -39,7 +39,7 @@ Aerosol Optical Depth (AOD) is widely used to measure near-surface atmospheric P
 
 @zhangSatelliteRemoteSensing2021 summarises and compares the various methods for satellite-based PM concentration mapping developed in the field over the past 20 years. The authors assessed the advantages and disadvantages of 4 different common methods:
 
-![](media/wk4/proscons.png)
+![](media/wk4/ProsCons.png)
 
 In their discussion, they suggest a combination of the first 3 methods: **univariate regression**, **CTM-based**, and **multivariate statistical**.
 
