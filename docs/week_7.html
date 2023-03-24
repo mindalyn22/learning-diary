@@ -20,6 +20,25 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
 </style>
 
 
@@ -199,7 +218,7 @@ ul.task-list li input[type="checkbox"] {
 <li>Can also be used for object detection</li>
 </ul>
 <p>I liked this gif from the lecture:</p>
-<p><img src="'media/wk7/obia.gif'" class="img-fluid"></p>
+<p><img src="media/wk7/obia.gif" class="img-fluid"></p>
 <p>Note that it doesn’t consider how smaller cells might be connected to create larger objects, but there are techniques that can be used to merge cells. The decision to merge depends on the application/desired outcome.</p>
 </section>
 <section id="sub-pixel-analysis-aka-spectral-mixture-analysis-sma-aka-linear-spectral-unmixing" class="level3" data-number="7.1.2">
@@ -253,20 +272,30 @@ ul.task-list li input[type="checkbox"] {
 <li>Leave one out cross validation - repeatedly running the model on all data except for 1 observation which then gets used as the test. this allows us to maximise training data and results in high accuracy, however very computationally expensive</li>
 <li>spatial cross validation - dealing with spatial autocorrelation between training and test splits by using k-means clustering in each fold</li>
 </ul>
-<p><img src="'media/wk7/SpatialCrossValidation.png'" class="img-fluid"></p>
+<p><img src="media/wk7/SpatialCrossValidation.png" class="img-fluid"> Spatial Cross Validation (Source: lecture slides)</p>
 </section>
 </section>
 <section id="applications" class="level2" data-number="7.2">
 <h2 data-number="7.2" class="anchored" data-anchor-id="applications"><span class="header-section-number">7.2</span> Applications</h2>
-<p>Beyond more accurate land cover classification, object based image analysis can also be used for object detection. One concerning application is the usage of OBIA by governmental border agencies to detect small ships (aka boats carrying irregular migrants / asylum seekers). Frontex, the European Union’s border security agency, has been using SAR images to detect these boats with much success.</p>
-<p>An aside about their motivations: They claim that this detection is crucial for search and rescue efforts with the goal of saving lives. In reality, despite accurate early detection, in many cases, Frontex has failed to rescue boats in distress. Their primary purpose is to prevent irregular migration, and this type of surveillance gives insight into the new pathways being taken by migrants — making it easier block their routes and inevitably stop them.</p>
-<p>Back to the remote sensing — a paper published in 2019 uses OBIA with combined high-and medium-resolution optical and radar images (tested with WorldView-2, QuickBird, GeoEye-1, Sentinel-2A, COSMO-SkyMed, and Sentinel-1 data) to detect vessels. They have similar accuracy to the SUMO (Search for Unidentified Maritime Object) algorithm, used by Frontex, in terms of true positives but returns less false positives (both elements of producer accuracy). (<a href="https://www.researchgate.net/publication/330322311_Object-based_image_analysis_approach_for_vessel_detection_on_optical_and_radar_images" class="uri">https://www.researchgate.net/publication/330322311_Object-based_image_analysis_approach_for_vessel_detection_on_optical_and_radar_images</a>)</p>
+<p>Beyond more accurate land cover classification, object based image analysis can also be used for object detection. One concerning application is the usage of OBIA by governmental border agencies to detect small ships (aka boats carrying irregular migrants / asylum seekers). Frontex, the European Union’s border security agency, has been using SAR images to detect these boats with much success <span class="citation" data-cites="webber">(<a href="references.html#ref-webber" role="doc-biblioref">Webber et al., n.d.</a>)</span>.</p>
+<p>An aside about their motivations: They claim that this detection is crucial for search and rescue efforts with the goal of saving lives. In reality, despite accurate early detection, in many cases, Frontex has failed to rescue boats in distress. Their primary purpose is to prevent irregular migration, and this type of surveillance gives insight into the new pathways being taken by migrants — making it easier block their routes and inevitably stop them <span class="citation" data-cites="webber">(<a href="references.html#ref-webber" role="doc-biblioref">Webber et al., n.d.</a>)</span>.</p>
+<p>Back to the remote sensing — a paper published in 2019 uses OBIA with combined high-and medium-resolution optical and radar images (tested with WorldView-2, QuickBird, GeoEye-1, Sentinel-2A, COSMO-SkyMed, and Sentinel-1 data) to detect vessels <span class="citation" data-cites="aielloObjectbasedImageAnalysis2019">(<a href="references.html#ref-aielloObjectbasedImageAnalysis2019" role="doc-biblioref">Aiello, Vezzoli, and Gianinetto 2019</a>)</span>. They have similar accuracy to the SUMO (Search for Unidentified Maritime Object) algorithm, used by Frontex, in terms of true positives but returns less false positives (both elements of producer accuracy).</p>
+<p><img src="media/wk7/boats.png" class="img-fluid"></p>
+<p>Source: <span class="citation" data-cites="aielloObjectbasedImageAnalysis2019">(<a href="references.html#ref-aielloObjectbasedImageAnalysis2019" role="doc-biblioref">Aiello, Vezzoli, and Gianinetto 2019</a>)</span></p>
 </section>
 <section id="reflection" class="level2" data-number="7.3">
 <h2 data-number="7.3" class="anchored" data-anchor-id="reflection"><span class="header-section-number">7.3</span> Reflection</h2>
 <p>While it’s very impressive that we are able to detect or classify objects with such accuracy at such granular levels using these innovative methods, it’s also scary to think about how this technology might be abused and threaten human life. We spend most of our time in CASA talking about leveraging data to improve the urban experience, improve lives, save the environment, etc., but we don’t often discuss the dangerous and harmful applications of these techniques. Thinking about the historic origins of many science and technological breakthroughs, many were researched and developed under state sponsorship during wartime, for military purposes. And…. it’s honestly so sad that some of our best inventions were motivated by violence, and political/economic interests abroad rather than the desire to improve lives at home. Anyways…how do we navigate that as academics and researchers — the paper I referenced above did not have an explicit political agenda but produced results that could further implicate vulnerable populations if leveraged by the wrong people (aka border control).</p>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
+<div id="ref-aielloObjectbasedImageAnalysis2019" class="csl-entry" role="doc-biblioentry">
+Aiello, Martina, Renata Vezzoli, and Marco Gianinetto. 2019. <span>“Object-Based Image Analysis Approach for Vessel Detection on Optical and Radar Images.”</span> <em>Journal of Applied Remote Sensing</em> 13 (January): 14502. <a href="https://doi.org/10.1117/1.JRS.13.014502">https://doi.org/10.1117/1.JRS.13.014502</a>.
+</div>
+<div id="ref-webber" class="csl-entry" role="doc-biblioentry">
+Webber, Frances, Charles Heller, Chris Jones, Katrin McGuaran, and Kees Hudig. n.d. <span>“Borders, Deaths and Resistance.”</span>
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->

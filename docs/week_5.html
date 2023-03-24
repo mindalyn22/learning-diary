@@ -100,7 +100,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./week_1.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Summary</span></a>
+  <a href="./week_1.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Week 1: Getting Started with Remote Sensing</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -125,17 +125,17 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./week_6.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">week_6</span></a>
+  <a href="./week_6.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Week 6: Classification 1</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./week_7.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">week_6</span></a>
+  <a href="./week_7.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Week 7: Classification 2</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./week_8.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">week_8</span></a>
+  <a href="./week_8.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Week 8: Temperature and Policy</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -180,7 +180,15 @@ ul.task-list li input[type="checkbox"] {
 <section id="summary" class="level2" data-number="5.1">
 <h2 data-number="5.1" class="anchored" data-anchor-id="summary"><span class="header-section-number">5.1</span> Summary</h2>
 <p>While we’ve spent the past few weeks learning how to correct sensor data, we’ve now been introduced to Google Earth Engine, a service for processing, analysing, and visualising geospatial data, which also provides a vast library of <strong>super massive</strong> datasets with already corrected data. It allows for processing at <strong>scale</strong>. Its user interface and development environment make for easy usage of their processing libraries, reading documentation, inspecting output, and visualisation.</p>
-<p>Typical processes that can be done in EE include data preprocessing (filtering by time frame, masking out clouds), geometry operations, image analysis, statistical analysis, modelling / machine learning. While EE provides many powerful tools for processing large amounts of data, it’s not as great for analysis. Analysis that might take a few lines of code in R are many more lines in javascript. Therefore, it’s recommended to get the relevant data we need from EE, then export it and do further analysis in R.</p>
+<p>Typical processes that can be done in EE include:</p>
+<ul>
+<li><p>data preprocessing (filtering by time frame, masking out clouds)</p></li>
+<li><p>geometry operations</p></li>
+<li><p>image analysis</p></li>
+<li><p>statistical analysis</p></li>
+<li><p>modelling / machine learning.</p></li>
+</ul>
+<p>While EE provides many powerful tools for processing large amounts of data, it’s not as great for analysis. Analysis that might take a few lines of code in R are many more lines in javascript. Therefore, it’s recommended to get the relevant data we need from EE, then export it and do further analysis in R.</p>
 </section>
 <section id="applications" class="level2" data-number="5.2">
 <h2 data-number="5.2" class="anchored" data-anchor-id="applications"><span class="header-section-number">5.2</span> Applications</h2>
@@ -204,7 +212,8 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <p>Perhaps one of the most useful features is the ability to make interactive Google earth engine applications that are readily usable by relevant stakeholders such as NGO’s, researchers, government, or local authorities. By providing an interface that allows users to customise parameter inputs, these apps allow these agencies to generate insights specific to their needs and can empower them to make data-driven decisions.</p>
 <p>Here is a cool app!</p>
-<p>Informal settlement detection in Dar es Salaam by Ollie Balinger: <img src="media/wk5/DarEsSalaam.png" class="img-fluid" alt="Dar Es Salaam"> - Uses sentinel-2 data and a random forest classifier to detect informal settlements based on roof materials and open street map data to measure housing density. - I’m currently taking another module in which we’ve studied informal settlement development in Dar es Salaam. The literature we look at is mostly qualitative. We look at case studies of specific areas and generally identify the types of areas that informal settlements occur — along major roads, at the urban edges, in the inner city. But this type of data usage and analysis allows for quantitative analysis — we can answer questions like what percentage of the settlements occur in which types of areas? In which areas should we focus the most resources?</p>
+<p>Informal settlement detection in Dar es Salaam by Ollie Balinger: <img src="media/wk5/DarEsSalaam.png" class="img-fluid" alt="Dar Es Salaam">Source: <a href="https://ollielballinger.users.earthengine.app/view/ism">Informal Settlement Mapper</a></p>
+<p>- Uses sentinel-2 data and a random forest classifier to detect informal settlements based on roof materials and open street map data to measure housing density. - I’m currently taking another module in which we’ve studied informal settlement development in Dar es Salaam. The literature we look at is mostly qualitative. We look at case studies of specific areas and generally identify the types of areas that informal settlements occur — along major roads, at the urban edges, in the inner city. But this type of data usage and analysis allows for quantitative analysis — we can answer questions like what percentage of the settlements occur in which types of areas? In which areas should we focus the most resources?</p>
 </section>
 <section id="reflection" class="level2" data-number="5.3">
 <h2 data-number="5.3" class="anchored" data-anchor-id="reflection"><span class="header-section-number">5.3</span> Reflection</h2>
@@ -321,7 +330,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
   <div class="nav-page nav-page-next">
       <a href="./week_6.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">week_6</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Week 6: Classification 1</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

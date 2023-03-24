@@ -157,6 +157,7 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#image-correction" id="toc-image-correction" class="nav-link" data-scroll-target="#image-correction"><span class="toc-section-number">3.1.1</span>  Image correction</a></li>
   <li><a href="#joining-data-sets" id="toc-joining-data-sets" class="nav-link" data-scroll-target="#joining-data-sets"><span class="toc-section-number">3.1.2</span>  Joining data sets</a></li>
+  <li><a href="#image-enhancements" id="toc-image-enhancements" class="nav-link" data-scroll-target="#image-enhancements"><span class="toc-section-number">3.1.3</span>  Image Enhancements</a></li>
   </ul></li>
   <li><a href="#applications" id="toc-applications" class="nav-link" data-scroll-target="#applications"><span class="toc-section-number">3.2</span>  Applications</a></li>
   <li><a href="#reflection" id="toc-reflection" class="nav-link" data-scroll-target="#reflection"><span class="toc-section-number">3.3</span>  Reflection</a></li>
@@ -205,7 +206,8 @@ ul.task-list li input[type="checkbox"] {
 <li>Dark Object Subtraction (relative)
 <ul>
 <li>take a dark feature which you would expect to have a value of 0. any value it <em>does</em> have is then assumed to be the atmosphere. use that value as what we should subtract from all other pixels.</li>
-<li><img src="media/wk3/darkobjsub.png" title="fig:" class="img-fluid" alt="Dark Object Subtraction"></li>
+<li><img src="media/wk3/darkobjsub.png" class="img-fluid"></li>
+<li>Source: <a href="https://youtu.be/qb4yFwzsnU8">Radiative transfer and atmospheric correction</a></li>
 </ul></li>
 </ul></li>
 <li>Topographic (orthorectification) correction - making the pixels viewed from directly overhead rather than at an angle.</li>
@@ -227,7 +229,10 @@ ul.task-list li input[type="checkbox"] {
 <p>The second topic we discussed was joining data sets.</p>
 <p>When we need to combine multiple images in order to cover our entire study area, we can use a technique called “Mosaicking”, which involves feathering the images. Two adjacent images will overlap slightly, and here, one easy solution is to take the mean of the overlapping pixels (but there are more sophisticated methods too)</p>
 <p>These images are from practical 5:</p>
-<p><img src="media/wk3/premosaic.png" class="img-fluid" alt="3 overlapping images not mosaicked yet"> <img src="media/wk3/mosaic.png" class="img-fluid" alt="Mosaicked – mean taken of the overlapping pixels"> ### Image Enhancements</p>
+<p><img src="media/wk3/premosaic.png" class="img-fluid" alt="3 overlapping images not mosaicked yet"> 3 overlapping images not mosaicked yet <img src="media/wk3/mosaic.png" class="img-fluid" alt="Mosaicked – mean taken of the overlapping pixels"> Mosaicked – mean taken of the overlapping pixels</p>
+</section>
+<section id="image-enhancements" class="level3" data-number="3.1.3">
+<h3 data-number="3.1.3" class="anchored" data-anchor-id="image-enhancements"><span class="header-section-number">3.1.3</span> Image Enhancements</h3>
 <p>Once we have our corrected imagery, we can apply enhancements highlight different types of information that might be useful to our study. Many of these techniques help improve the accuracy of land cover classification. Here are some types of enhancements:</p>
 <ul>
 <li>Contrast enhancement - stretching the color range to improve the visual quality of the image.</li>
@@ -256,14 +261,14 @@ ul.task-list li input[type="checkbox"] {
 <p><span class="math display">\[
 NDMI=(B08−B11)/(B08+B11)
 \]</span> And it uses bands B08 (near infrared) and B11 (short wave infrared) from Sentinel-2 (note that it would take different bands when using data from different sensors). B08 is good for highlighting dense vegetation that appears as dark green. B11 is useful for vegetation moisture content (which means it’s also useful for mapping forest fires!).</p>
-<p>In the image below, the moist soil is indicated in blue while the dry is in red: <img src="media/wk3/ndmi-lawns.jpeg" class="img-fluid" alt="NDMI Lawns"> (source: <span class="citation" data-cites="ai6yrham">(<a href="references.html#ref-ai6yrham" role="doc-biblioref"><strong>ai6yrham?</strong></a>)</span>)</p>
-<p>I was surprised by another image in this thread which shows some of the bigger golf courses cutting back on their watering. <img src="media/wk3/ndvi-golf-courses.jpeg" class="img-fluid" alt="NDVI Lawns"> (source: <span class="citation" data-cites="ai6yrham">(<a href="references.html#ref-ai6yrham" role="doc-biblioref"><strong>ai6yrham?</strong></a>)</span>)</p>
+<p>In the image below, the moist soil is indicated in blue while the dry is in red: <img src="media/wk3/ndmi-lawns.jpeg" class="img-fluid" alt="NDMI Lawns"> source: <a href="https://twitter.com/ai6yrham/status/1537146383475437568"><span class="citation" data-cites="ai6yrham">(</span></a><a href="#ref-ai6yrham" role="doc-biblioref"><strong>ai6yrham?</strong></a>)</p>
+<p>I was surprised by another image in this thread which shows some of the bigger golf courses cutting back on their watering. <img src="media/wk3/ndvi-golf-courses.jpeg" class="img-fluid" alt="NDVI Lawns"> source: <a href="https://twitter.com/ai6yrham/status/1537146383475437568"><span class="citation" data-cites="ai6yrham">(</span></a><a href="#ref-ai6yrham" role="doc-biblioref"><strong>ai6yrham?</strong></a>)</p>
 </section>
 <section id="reflection" class="level2" data-number="3.3">
 <h2 data-number="3.3" class="anchored" data-anchor-id="reflection"><span class="header-section-number">3.3</span> Reflection</h2>
 <p>Although we most likely will not have to correct our own imagery in most cases, since most data comes corrected already it’s important to have a general understanding of how these values are generated for a couple of reasons.</p>
 <ol type="1">
-<li><p>good to have background knowledge incase something is behaving differently / you’re getting different results than how you would expect</p></li>
+<li><p>good to have background knowledge in case something is behaving differently / you’re getting different results than how you would expect</p></li>
 <li><p>at some point we might receive data that isn’t already corrected. although i can guarantee you I will not be able to remember exactly how to correct what type of data in what way just from this one lecture, at least I know what to look up.</p></li>
 </ol>
 <p>Whenever technology advances this much so that processes that used to take days now can be done in a few lines of code, I wonder how much people in a field could have achieved if they could have used more of their time on the post processing steps. But I guess that’s always how it goes — we do things the hard, manual way until someone figures out how to automate it, then we continue on to the next hard thing.</p>

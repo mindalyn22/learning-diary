@@ -7,8 +7,8 @@ editor: visual
 
 In the first lecture, we started off with an overview of different types of sensors, how electromagnetic waves interact with earth's surface and atmosphere, different types of resolutions, spectral bands and spectral signatures. I will summarise each of these topics then talk about some findings from the practical.
 
-
 ### Sensor types
+
 Sensors can be active of passive. What does that mean? See the table below:
 
 | Passive                  | Active                                                       |
@@ -17,17 +17,17 @@ Sensors can be active of passive. What does that mean? See the table below:
 | Uses available energy    | Can go through clouds.                                       |
 | Detects reflected energy | SAR is a type of active sensor.                              |
 
-![](media/wk1/sensortypes.png) 
+![](media/wk1/sensortypes.png)
 
 ### How electromagnetic waves interact with earth's surface and atmosphere
 
-- Radiance 
-    - a property of the sensor — how much energy it’s collecting
-    - dependent on light source
-- Reflectance
-    - ratio of light coming to and leaving
-    - it’s a property of a material (like reflectance of grass)
-    - surface reflectance removes effects of light source **and** atmosphere
+-   Radiance
+    -   a property of the sensor --- how much energy it's collecting
+    -   dependent on light source
+-   Reflectance
+    -   ratio of light coming to and leaving
+    -   it's a property of a material (like reflectance of grass)
+    -   surface reflectance removes effects of light source **and** atmosphere
 
 ### Different types of resolutions
 
@@ -36,12 +36,17 @@ Sensors can be active of passive. What does that mean? See the table below:
 3.  **radiometric** - granularity of energy that sensor captures (in bits)
 4.  **temporal** - time of sensor revisiting (how often / time of day)
 
+![Sentinel-2 bands and their spatial resolutions](media/wk1/bands2makeherdance.png)
+
+Sentinel-2 bands and their spatial resolutions (Source: Practical 1 (Andy MacLachlan))
+
 \*Can downscale or upscale bands to convert them to diff spatial resolution so we can use more of the spectral data. Downscaling is intensive but upscaling (aka resampling) can be done with (1) knn or (2) majority rule.
 
 ### Spectral Signatures
+
 Every feature on earth's surface has a spectral signature which is the electromagnetic energy it reflects at each spectral band. A few of these bands are visible to us (Red, Blue, and Green), but most aren't.
 
-![Spectral Signatures](media/wk1/SpectralSignatures.png)
+![Spectral Signatures](media/wk1/SpectralSignatures.png) Spectral Signatures (Source: [Spectral Reflectance Curves What is Remote Sensing](https://www.youtube.com/watch?v=KF2j4sH7pkE&ab_channel=Boldbayar.R))
 
 Sensors produce a digital number which represents the amount of energy collected by the sensor. A raw image is a 2D matrix where each pixel represents the raw DN value (one for each band i think). We have to convert these values into radiance, then into reflectance (2 types: top of atmosphere and **bottom of atmosphere aka surface reflectance**). Surface reflectance is the true property of the object (ratio of energy reflected by the object. The DN values are not the true value because the sensor might capture different amounts of energy on different days based on weather conditions.
 
@@ -53,28 +58,44 @@ Different sensors might give slightly different spectral signatures for the same
 
 I chose to look at a region of Singapore for this practical.
 
-bands ![Sentinel Bands](media/wk1/bands2makeherdance.png)
+**Color Composites**
 
-Color Composites (1) True Colour Composite (B1=Blue, B2=Green, B3=Red) \[insert image\] ![True Color Composite](media/wk1/TrueColorComposite.png) (2) False Color Composite (B8, B4, B3) - Plants reflect near-infrared and green light whilst absorbing red. ![False Color Composite](media/wk1/FalseColorComposite.png) (3) Atmospheric Penetration Composite - B12, B11, B8A with no visible bands to penetrate atmospheric particles. Vegetation = blue, urban area = white, gray cyan or purple. ![Atmospheric Penetration Composite](media/wk1/AtmosphericPenetrationComposite.png) (4) Short-wave Infrared Composite (B12, B8A and B4) - shows vegetation in green, the darker the greener the denser it is and brown shows built up or bare soil ...and there are more
+We can select different combinations of bands to highlight different aspects of the surface based on absorption and reflection properties. Here are some that I made in the practical:
 
-Spectral Feature Space - Wizard/Tasseled Cap - x axis (brightness): B4 (red) - vegetation absorbs - y axis (greenness): B8 (near infrared reflectance) - vegetation reflects ![Spectral Feature Space](media/wk1/spectralFreatureSpace.png) ![Tassled Cap Scatter Plot](media/wk1/b4b8scatterplot.png)
+\(1\) True Colour Composite (B1=Blue, B2=Green, B3=Red)![True Color Composite](media/wk1/TrueColorComposite.png) (2) False Color Composite (B8, B4, B3) - Plants reflect near-infrared and green light whilst absorbing red. ![False Color Composite](media/wk1/FalseColorComposite.png) (3) Atmospheric Penetration Composite - B12, B11, B8A with no visible bands to penetrate atmospheric particles. Vegetation = blue, urban area = white, gray cyan or purple. ![Atmospheric Penetration Composite](media/wk1/AtmosphericPenetrationComposite.png) (4) Short-wave Infrared Composite (B12, B8A and B4) - shows vegetation in green, the darker the greener the denser it is and brown shows built up or bare soil ...and there are more
 
-Tasseled Cap Function: A way of transforming original data to new data with reduced dimensionality (using PCA - reducing dimensions while maximising variance). Brightness, associated with spectral bands that show bare soil, man made surfaces or bight materials Greenness, associated with green vegetation Wetness, associated with moisture ![Tassel Cap Transformation](media/wk1/TasselCapTransformationBrightGreenWet.png)
+**Spectral Feature Space**
+
+Wizard/Tasseled Cap
+
+x axis (brightness): B4 (red) - vegetation absorbs
+
+y axis (greenness): B8 (near infrared reflectance) - vegetation reflects
+
+![Spectral Feature Space](media/wk1/spectralFeatureSpace.png)
+
+(Source: [Remote Sensing 4113](http://geofaculty.uwyo.edu/rhowell/classes/remote_sensing/labs/lab_11_2018_alternate_vegetation.pdf))
+
+![Tassled Cap Scatter Plot](media/wk1/b4b8scatterplot.png) Source: I made this in the practical
+
+Tasseled Cap Function: A way of transforming original data to new data with reduced dimensionality (using PCA - reducing dimensions while maximising variance). Brightness, associated with spectral bands that show bare soil, man made surfaces or bight materials Greenness, associated with green vegetation Wetness, associated with moisture
+
+![Tassel Cap Transformation](media/wk1/TasselCapTransformationBrightGreenWet.png) Source: I made this in the practical
 
 ## Applications
 
-Environmental Application: A study was done to assess water quality by looking for particular algae. The researchers asked what is the spectral reflectivity of this type of algae in this type of water? They use a spectroscope to emit electromagnetic radiation onto the aglae and to get the spectral signature. Then when assessing water images, can then search for pixels that are similar to this spectral signature. They write a program to find every pixel that has a a reflectivity of x in the infrared band, a reflectivity of y in the red band, ...etc. (Rundquist et. al, 1996)
+Environmental Application: A study was done to assess water quality by looking for particular algae. The researchers asked what is the spectral reflectivity of this type of algae in this type of water? They use a spectroscope to emit electromagnetic radiation onto the aglae and to get the spectral signature. Then when assessing water images, can then search for pixels that are similar to this spectral signature. They write a program to find every pixel that has a a reflectivity of x in the infrared band, a reflectivity of y in the red band, ...etc. [@rundquist1996]
 
-Military application: Camouflaging equipment in colors (making them green to hide in trees, but not camouflaging in infrared would mean that if something flew over with infrared sensors, they could be detected. Mentioned in this youtube video: <https://www.youtube.com/watch?v=KF2j4sH7pkE&ab_channel=Boldbayar.R>
+Military application: Camouflaging equipment in colors (making them green to hide in trees, but not camouflaging in infrared would mean that if something flew over with infrared sensors, they could be detected. Mentioned in this youtube video: Source: [Spectral Reflectance Curves What is Remote Sensing](https://www.youtube.com/watch?v=KF2j4sH7pkE&ab_channel=Boldbayar.R)
 
 How can we differentiate between similar looking surfaces? If you have a higher spectral resolution (chop it up into finer bands), you can better differentiate between things that might look similar (like oak tree vs an elm tree, grass vs astroturf)
 
-![Grass vs Astrotuft](media/wk1/GrassAstroturf.png) (Lillesane et al., 2015)
+![Grass vs Astrotuft](media/wk1/GrassAstroturf.png) [@lillesand2015]
 
 ## Reflection
 
-There is so much more to remote sensing than I expected. I had a really basic idea that there were just satellites that took pictures from outer space but I didn't realise how so many different lengths of electromagnetic waves, beyond those which are visible to us, can give us different types of information.
+There is so much more to remote sensing than I expected. I had the really simplistic idea that satellite imagery was limited to what we see on Google satellite view, maybe with varying spatial resolutions. I didn't realise how different lengths of electromagnetic waves, beyond those which are visible to us, can give us different types of information. I hadn't considered how temporal resolution might affect our analysis. Or seasonality and cloud cover.
 
-I'm interested in the use of these spectral signatures in identifying building materials as I think that could have really useful applications in climate and sustainability. I thought about this article I read from Bloomberg CityLab that assessed heat islands in major cities in relation to the concentration of specific materials and colors (clay buildings and white paint being cooler while concrete was hotter).
+I'm interested in the use of these spectral signatures in identifying building materials as I think that could have really useful applications in climate and sustainability. I thought about this [article](https://www.bloomberg.com/graphics/2022-city-heatwave-adaptations/) I read from Bloomberg CityLab that assessed heat islands in major cities in relation to the concentration of specific materials and colors (clay buildings and white paint being cooler while concrete was hotter). I'm excited to learn more about what types of data, methods and analysis could be used to conduct a study like that.
 
-I also think it's really great that a lot of data is free and accessible, which will improve capabilites for large scale data collection and analysis in data poor areas.
+I also think it's really great that a lot of data is free and publically accessible, which will improve capabilities for large scale data collection and analysis in data poor areas.

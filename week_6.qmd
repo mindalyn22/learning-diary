@@ -16,13 +16,15 @@ Classification can be supervised or unsupervised. We also have generic classifie
 
 As mentioned above, classification is useful for understanding LULC change over time, or looking at the relationship between LULC and other variables such as surface temperature or pollution, susceptibility to hazards.
 
-A study done in Amman City, Jordan provides an example of using remote sensing data and classification techniques to inform urban planning in historically data-poor environments (citation, <https://www.mdpi.com/2071-1050/11/8/2260>). The aim was to understand patterns and causes of urban expansion from 1987 - 2017.
+A study done in Amman City, Jordan provides an example of using remote sensing data and classification techniques to inform urban planning in historically data-poor environments [@al-bilbisi2019]. The aim was to understand patterns and causes of urban expansion from 1987 - 2017.
 
 **Methodology**
 
 They used Landsat images (6 spectral bands) from 1987, 1997, 2007, and 2017 and classified pixels into 4 land use/covers: urban area, vegetation, exposed rocks, and exposed soils. They use the maximum likelihood supervised classification algorithm, however they don't explain why they chose it. They do however achieve an accuracy rate of above 85% for each image (range is 86.4% - 90.2%), which seems pretty decent!
 
 They then employed a change detection technique between the images for each year. Here is the final output: ![](media/wk6/LULCAmaan.png)
+
+Source: [@al-bilbisi2019]
 
 **Findings and Discussion**
 

@@ -24,7 +24,7 @@ Since pixels don't often represent an object, this technique involves creating s
 
 I liked this gif from the lecture:
 
-![]('media/wk7/obia.gif')
+![](media/wk7/obia.gif)
 
 Note that it doesn't consider how smaller cells might be connected to create larger objects, but there are techniques that can be used to merge cells. The decision to merge depends on the application/desired outcome.
 
@@ -59,15 +59,19 @@ We also learned about best practices for selecting training/test data for these 
 -   Leave one out cross validation - repeatedly running the model on all data except for 1 observation which then gets used as the test. this allows us to maximise training data and results in high accuracy, however very computationally expensive
 -   spatial cross validation - dealing with spatial autocorrelation between training and test splits by using k-means clustering in each fold
 
-![]('media/wk7/SpatialCrossValidation.png')
+![](media/wk7/SpatialCrossValidation.png) Spatial Cross Validation (Source: lecture slides)
 
 ## Applications
 
-Beyond more accurate land cover classification, object based image analysis can also be used for object detection. One concerning application is the usage of OBIA by governmental border agencies to detect small ships (aka boats carrying irregular migrants / asylum seekers). Frontex, the European Union's border security agency, has been using SAR images to detect these boats with much success.
+Beyond more accurate land cover classification, object based image analysis can also be used for object detection. One concerning application is the usage of OBIA by governmental border agencies to detect small ships (aka boats carrying irregular migrants / asylum seekers). Frontex, the European Union's border security agency, has been using SAR images to detect these boats with much success [@webber].
 
-An aside about their motivations: They claim that this detection is crucial for search and rescue efforts with the goal of saving lives. In reality, despite accurate early detection, in many cases, Frontex has failed to rescue boats in distress. Their primary purpose is to prevent irregular migration, and this type of surveillance gives insight into the new pathways being taken by migrants --- making it easier block their routes and inevitably stop them.
+An aside about their motivations: They claim that this detection is crucial for search and rescue efforts with the goal of saving lives. In reality, despite accurate early detection, in many cases, Frontex has failed to rescue boats in distress. Their primary purpose is to prevent irregular migration, and this type of surveillance gives insight into the new pathways being taken by migrants --- making it easier block their routes and inevitably stop them [@webber].
 
-Back to the remote sensing --- a paper published in 2019 uses OBIA with combined high-and medium-resolution optical and radar images (tested with WorldView-2, QuickBird, GeoEye-1, Sentinel-2A, COSMO-SkyMed, and Sentinel-1 data) to detect vessels. They have similar accuracy to the SUMO (Search for Unidentified Maritime Object) algorithm, used by Frontex, in terms of true positives but returns less false positives (both elements of producer accuracy). (<https://www.researchgate.net/publication/330322311_Object-based_image_analysis_approach_for_vessel_detection_on_optical_and_radar_images>)
+Back to the remote sensing --- a paper published in 2019 uses OBIA with combined high-and medium-resolution optical and radar images (tested with WorldView-2, QuickBird, GeoEye-1, Sentinel-2A, COSMO-SkyMed, and Sentinel-1 data) to detect vessels [@aielloObjectbasedImageAnalysis2019]. They have similar accuracy to the SUMO (Search for Unidentified Maritime Object) algorithm, used by Frontex, in terms of true positives but returns less false positives (both elements of producer accuracy).
+
+![](media/wk7/boats.png)
+
+Source: [@aielloObjectbasedImageAnalysis2019]
 
 ## Reflection
 

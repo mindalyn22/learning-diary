@@ -11,11 +11,15 @@ In 2015, despite not being a member state of the UN, the State of Palestine comm
 >
 > Leaders have committed to involve not just the local government but all actors of society to take climate action taking into account the Paris Agreement on climate change which seeks to limit the increase in global temperature to well below 2 degrees Celsius. Sustainable cities that reduce emissions from energy  and build resilience can play a lead role."
 
+Source: [@NewUrbanAgenda]
+
 In a report documenting their progress in implementing the New Urban Agenda from 2016 - 2021, Palestine outlines the progress made on each development theme. Under "Resilience, Mitigation and Adaptation of Cities and Human Settlements", one of the goals is:
 
 > **3.1.2 Implement climate change mitigation and adaptation actions**
 >
 > **3.1.2.b** **Annual mean levels of fine particulate matter (e.g., PM2.5 and PM10) in cities (population weighted)**
+
+Source: [@implemen2021]
 
 High air pollution in Palestinian territories can be attributed to rapid urbanisation, the improper management of solid waste, and a growing population, much of whom rely on motor vehicles to get around due to a limited access to alternative forms of transportation. These consequences are both environmental and social, having negative impacts on liveability, quality of life, and health outcomes (including respiratory diseases, serious immune system disorders, neurological diseases, cardiovascular diseases, and lung cancer).
 
@@ -25,8 +29,6 @@ In terms of progress on this goal, the report states:
 
 It's clear from this report that monitoring air pollution in the spatial dimension is of high importance to the State of Palestine, but they lack a systematic way to do so.
 
-citations!!
-
 ## Applications
 
 The state has been experiencing a lack of funding due to both international aid declining significantly since 2019 and Israel's witholding of tax revenue. This means that any strategies we propose must be low cost. On ground monitoring would provide reliable air quality measurements, but require costly infrastructure, installation, and management. The use of satellite imagery to map particulate matter (PM) concentrations has been well studied in recent years.
@@ -35,13 +37,13 @@ The state has been experiencing a lack of funding due to both international aid 
 
 Aerosol Optical Depth (AOD) is widely used to measure near-surface atmospheric PM. It is a measure of the amount of light scattered or absorbed by aerosol particles in the atmosphere. We will use imagery from MODIS (the Moderate Resolution Imaging Spectroradiometer), which provides AOD measurements at a daily temporal resolution.
 
-Zhang et. al (2021) summarises and compares the various methods for satellite-based PM concentration mapping developed in the field over the past 20 years. The authors assessed the advantages and disadvantages of 4 different common methods:
+@zhangSatelliteRemoteSensing2021 summarises and compares the various methods for satellite-based PM concentration mapping developed in the field over the past 20 years. The authors assessed the advantages and disadvantages of 4 different common methods:
 
 ![](media/wk4/proscons.png)
 
 In their discussion, they suggest a combination of the first 3 methods: **univariate regression**, **CTM-based**, and **multivariate statistical**.
 
-The **land use regression model (LUR)** is another method that can be employed in urban areas. It uses variables like land use, traffic, population density, and other geographic factors around the site as predictors for PM concentration. Liu et al. (2016) applied this method in Shanghai without using any satellite AOD data and achieved an R\^2 of 0.88. We can test a hybrid model using LUR with one or multiple of the methods mentioned above and find that which achieves the highest predictive accuracy for our mapping.
+The **land use regression model (LUR)** is another method that can be employed in urban areas. It uses variables like land use, traffic, population density, and other geographic factors around the site as predictors for PM concentration. @liuLandUseRegression2016 applied this method in Shanghai without using any satellite AOD data and achieved an R\^2 of 0.88. We can test a hybrid model using LUR with one or multiple of the methods mentioned above and find that which achieves the highest predictive accuracy for our mapping.
 
 Once we have this model, we can use **seasonal decomposition** to see how pollution varies throughout seasons of the year. We can also conduct a **time series analysis** to assess how it changes day-to-day over the course of a week.
 

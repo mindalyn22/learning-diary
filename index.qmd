@@ -1,5 +1,7 @@
 # Hello! {.unnumbered}
 
-My name is Mindy and I'm a Master's student of Urban Spatial Science in the Center for Advanced Spatial Analysis (CASA). My background is in web development and data engineering. This year, I'm taking a module called: [CASA0023: Remotely Sensing Cities and Environments](https://andrewmaclachlan.github.io/CASA0023/00-course_info.html) which covers the processing techniques, analysis methods, and practical applications of remotely sensed data.
+My name is Mindy and I'm a Master's student of Urban Spatial Science in the Center for Advanced Spatial Analysis (CASA). My background is in web development and data engineering. Over the past few years my interest grew in data science, and particularly using data to understand the way people move through, experience, and interact with and within space/cities/land. I'm taking this course to explore my interests and to develop skills that will help me answer these questions that I have!
+
+This year, I'm enrolled in a module called: [CASA0023: Remotely Sensing Cities and Environments](https://andrewmaclachlan.github.io/CASA0023/00-course_info.html) which covers the processing techniques, analysis methods, and practical applications of remotely sensed data.
 
 This book documents my weekly learning journey through the module. Navigate through each week using the menu on the left side.

@@ -20,6 +20,25 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
 </style>
 
 
@@ -100,7 +119,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./week_1.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Summary</span></a>
+  <a href="./week_1.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Week 1: Getting Started with Remote Sensing</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -125,17 +144,17 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./week_6.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">week_6</span></a>
+  <a href="./week_6.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Week 6: Classification 1</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./week_7.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">week_6</span></a>
+  <a href="./week_7.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Week 7: Classification 2</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./week_8.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">week_8</span></a>
+  <a href="./week_8.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Week 8: Temperature and Policy</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -184,28 +203,29 @@ ul.task-list li input[type="checkbox"] {
 <p>“<strong>Take action to address climate change by reducing their greenhouse gas emissions”</strong></p>
 <p>Leaders have committed to involve not just the local government but all actors of society to take climate action taking into account the Paris Agreement on climate change which seeks to limit the increase in global temperature to well below 2 degrees Celsius. Sustainable cities that reduce emissions from energy &nbsp;and build resilience can play a lead role.”</p>
 </blockquote>
+<p>Source: <span class="citation" data-cites="NewUrbanAgenda">(<a href="references.html#ref-NewUrbanAgenda" role="doc-biblioref"><span>“The <span>New Urban Agenda</span>”</span> n.d.</a>)</span></p>
 <p>In a report documenting their progress in implementing the New Urban Agenda from 2016 - 2021, Palestine outlines the progress made on each development theme. Under “Resilience, Mitigation and Adaptation of Cities and Human Settlements”, one of the goals is:</p>
 <blockquote class="blockquote">
 <p><strong>3.1.2 Implement climate change mitigation and adaptation actions</strong></p>
 <p><strong>3.1.2.b</strong> <strong>Annual mean levels of fine particulate matter (e.g., PM2.5 and PM10) in cities (population weighted)</strong></p>
 </blockquote>
+<p>Source: <span class="citation" data-cites="implemen2021">(<a href="references.html#ref-implemen2021" role="doc-biblioref">2021</a>)</span></p>
 <p>High air pollution in Palestinian territories can be attributed to rapid urbanisation, the improper management of solid waste, and a growing population, much of whom rely on motor vehicles to get around due to a limited access to alternative forms of transportation. These consequences are both environmental and social, having negative impacts on liveability, quality of life, and health outcomes (including respiratory diseases, serious immune system disorders, neurological diseases, cardiovascular diseases, and lung cancer).</p>
 <p>In terms of progress on this goal, the report states:</p>
 <blockquote class="blockquote">
 <p><strong>Neither government authorities nor LGUs track the levels of the fine PM as part of a comprehensive system</strong>, although authorities including major municipalities <strong>acknowledge the importance of monitoring air pollution</strong> including the levels of the fine PM especially at proximity of industrial zones and quarries, in addition to various topographic locations so as to provide specific and macro-level indications about the impact of factories and transborder activities.</p>
 </blockquote>
 <p>It’s clear from this report that monitoring air pollution in the spatial dimension is of high importance to the State of Palestine, but they lack a systematic way to do so.</p>
-<p>citations!!</p>
 </section>
 <section id="applications" class="level2" data-number="4.2">
 <h2 data-number="4.2" class="anchored" data-anchor-id="applications"><span class="header-section-number">4.2</span> Applications</h2>
 <p>The state has been experiencing a lack of funding due to both international aid declining significantly since 2019 and Israel’s witholding of tax revenue. This means that any strategies we propose must be low cost. On ground monitoring would provide reliable air quality measurements, but require costly infrastructure, installation, and management. The use of satellite imagery to map particulate matter (PM) concentrations has been well studied in recent years.</p>
 <p><strong>Data and</strong> <strong>Methods</strong></p>
 <p>Aerosol Optical Depth (AOD) is widely used to measure near-surface atmospheric PM. It is a measure of the amount of light scattered or absorbed by aerosol particles in the atmosphere. We will use imagery from MODIS (the Moderate Resolution Imaging Spectroradiometer), which provides AOD measurements at a daily temporal resolution.</p>
-<p>Zhang et. al (2021) summarises and compares the various methods for satellite-based PM concentration mapping developed in the field over the past 20 years. The authors assessed the advantages and disadvantages of 4 different common methods:</p>
+<p><span class="citation" data-cites="zhangSatelliteRemoteSensing2021">Zhang et al. (<a href="references.html#ref-zhangSatelliteRemoteSensing2021" role="doc-biblioref">2021</a>)</span> summarises and compares the various methods for satellite-based PM concentration mapping developed in the field over the past 20 years. The authors assessed the advantages and disadvantages of 4 different common methods:</p>
 <p><img src="media/wk4/proscons.png" class="img-fluid"></p>
 <p>In their discussion, they suggest a combination of the first 3 methods: <strong>univariate regression</strong>, <strong>CTM-based</strong>, and <strong>multivariate statistical</strong>.</p>
-<p>The <strong>land use regression model (LUR)</strong> is another method that can be employed in urban areas. It uses variables like land use, traffic, population density, and other geographic factors around the site as predictors for PM concentration. Liu et al.&nbsp;(2016) applied this method in Shanghai without using any satellite AOD data and achieved an R^2 of 0.88. We can test a hybrid model using LUR with one or multiple of the methods mentioned above and find that which achieves the highest predictive accuracy for our mapping.</p>
+<p>The <strong>land use regression model (LUR)</strong> is another method that can be employed in urban areas. It uses variables like land use, traffic, population density, and other geographic factors around the site as predictors for PM concentration. <span class="citation" data-cites="liuLandUseRegression2016">Liu et al. (<a href="references.html#ref-liuLandUseRegression2016" role="doc-biblioref">2016</a>)</span> applied this method in Shanghai without using any satellite AOD data and achieved an R^2 of 0.88. We can test a hybrid model using LUR with one or multiple of the methods mentioned above and find that which achieves the highest predictive accuracy for our mapping.</p>
 <p>Once we have this model, we can use <strong>seasonal decomposition</strong> to see how pollution varies throughout seasons of the year. We can also conduct a <strong>time series analysis</strong> to assess how it changes day-to-day over the course of a week.</p>
 <p><strong>Recommended usages</strong></p>
 <p>This data will allow planners and policy makers to understand the extent of impact that factories, quarries, and transborder activities have on air quality. They can also see where motor vehicles and improper waste management practices have the largest effects. They can use this information to target interventions in the areas with the highest exposure. Interventions could include assigning which cars can drive on which days (a successful strategy adopted by other cities including Paris and Beijing), keeping housing development away from industrial zones, implementing new waste management strategies or increasing education around the environmental impact of trash incineration. They can also use this data to (1) expose the environmental and health impacts that the illegal occupation is causing, and (2) apply pressure on international community for more aid and support.</p>
@@ -218,6 +238,20 @@ ul.task-list li input[type="checkbox"] {
 <p>This practical showed me how necessary it is to understand of the specific political, economic, social, and spatial characteristics of a region when coming up with effective solutions. One-size-fits all solutions do not exist and there is no universal strategy that can be implemented in every city!</p>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
+<div id="ref-liuLandUseRegression2016" class="csl-entry" role="doc-biblioentry">
+Liu, Chao, Barron H. Henderson, Dongfang Wang, Xinyuan Yang, and Zhong-ren Peng. 2016. <span>“A Land Use Regression Application into Assessing Spatial Variation of Intra-Urban Fine Particulate Matter (<span>PM2</span>.5) and Nitrogen Dioxide (<span>NO2</span>) Concentrations in <span>City</span> of <span>Shanghai</span>, <span>China</span>.”</span> <em>Science of The Total Environment</em> 565 (September): 607–15. <a href="https://doi.org/10.1016/j.scitotenv.2016.03.189">https://doi.org/10.1016/j.scitotenv.2016.03.189</a>.
+</div>
+<div id="ref-implemen2021" class="csl-entry" role="doc-biblioentry">
+State of Palestine Ministry of Local Government. 2021. <span>“Implementation of the New Urban Agenda: National Report for the State of Palestine,”</span> October. <a href="https://www.urbanagendaplatform.org/sites/default/files/2022-01/Palestine%20NUA%20National%20Report_English.pdf">https://www.urbanagendaplatform.org/sites/default/files/2022-01/Palestine%20NUA%20National%20Report_English.pdf</a>.
+</div>
+<div id="ref-NewUrbanAgenda" class="csl-entry" role="doc-biblioentry">
+<span>“The <span>New Urban Agenda</span>.”</span> n.d. <span>Habitat III</span>. Accessed March 18, 2023. <a href="https://habitat3.org/the-new-urban-agenda/">https://habitat3.org/the-new-urban-agenda/</a>.
+</div>
+<div id="ref-zhangSatelliteRemoteSensing2021" class="csl-entry" role="doc-biblioentry">
+Zhang, Ying, Zhengqiang Li, Kaixu Bai, Yuanyuan Wei, Yisong Xie, Yuanxun Zhang, Yang Ou, et al. 2021. <span>“Satellite Remote Sensing of Atmospheric Particulate Matter Mass Concentration: <span>Advances</span>, Challenges, and Perspectives.”</span> <em>Fundamental Research</em> 1 (3): 240–58. <a href="https://doi.org/10.1016/j.fmre.2021.04.007">https://doi.org/10.1016/j.fmre.2021.04.007</a>.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->
